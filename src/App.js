@@ -1,10 +1,9 @@
-import React, {useState} from "react";
+import React from "react";
 import "./App.css";
 
-function App() {
-  const [counter, setCounter] = useState(5);
-  const handleClick = () => setCounter(counter + 1);
-  return <button onClick={handleClick}> {counter} </button>; //React.createElement("button", null, "{ counter }");
+function App(props) {
+  const handleClick = () => props.setValue(props.incVal);
+  return <button onClick={handleClick}> +{props.incVal} </button>;
 }
 
 export default App;
