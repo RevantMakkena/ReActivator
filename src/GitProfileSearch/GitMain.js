@@ -5,12 +5,9 @@ import GitProfileSearch from "./GitProfileSearch";
 import testData from "./TestData";
 
 class GitMain extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      profiles: testData,
-    };
-  }
+  state = {
+    profile: testData, //Same as the previous version with super()
+  };
   render() {
     return (
       <div>
