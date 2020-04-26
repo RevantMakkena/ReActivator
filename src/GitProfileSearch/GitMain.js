@@ -13,7 +13,7 @@ class GitMain extends React.Component {
       <div>
         <div className='git-card-main'>{this.props.titleName}</div>
         <GitProfileSearch />
-        <GitCardList profile={this.state.profiles} />
+        <GitCardList profile={this.state.profile} />
       </div>
     );
   }
