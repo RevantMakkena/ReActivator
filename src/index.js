@@ -2,11 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import * as serviceWorker from "./serviceWorker";
-import Main from "./Main";
+import GitMain from "./GitProfileSearch/GitMain";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Main></Main>
+    <>
+      <GitMain titleName='Git Profile Search'></GitMain>
+    </>
   </React.StrictMode>,
   document.getElementById("root")
 );
