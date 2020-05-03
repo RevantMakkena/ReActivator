@@ -2,12 +2,14 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import * as serviceWorker from "./serviceWorker";
-import GitMain from "./GitProfileSearch/GitMain";
+import AuthorQuiz from "./AuthorQuiz/AuthorQuiz";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import currState from "./AuthorQuizData";
 
 ReactDOM.render(
   <React.StrictMode>
     <>
-      <GitMain titleName='Git Profile Search'></GitMain>
+      <AuthorQuiz {...currState} />
     </>
   </React.StrictMode>,
   document.getElementById("root")

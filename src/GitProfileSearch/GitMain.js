@@ -1,5 +1,4 @@
 import React from "react";
-import GitCard from "./GitCard";
 import GitCardList from "./GitCardList";
 import GitProfileSearch from "./GitProfileSearch";
 import testData from "./TestData";
