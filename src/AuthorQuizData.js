@@ -37,6 +37,7 @@ function getTurnData(authors) {
   }, []);
   const fourRandomBooks = shuffle(allBooks).slice(0, 4);
   const answer = sample(fourRandomBooks);
+  // console.log(answer);
   return {
     books: fourRandomBooks,
     author: authors.find((author) =>
@@ -47,6 +48,15 @@ function getTurnData(authors) {
 
 const currState = {
   turnData: getTurnData(authors),
+  highlight: "",
 };
 
-export default currState;
+function onAnswerSelected(answer) {
+  console.log(answer);
+  const isCorrect = currState.turnData.author.books.some(
+    (book) => book === answer
+  );
+  currState.highlight = isCorrect ? "correct" : "wrong";
+}
+
+export {currState, onAnswerSelected};
