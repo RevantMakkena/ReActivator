@@ -1,5 +1,6 @@
 import React from "react";
 import AuthorQuiz from "./AuthorQuiz";
+import {Link} from "react-router-dom";
 //import {currState, onAnswerSelected} from "../AuthorQuizData";
 import {shuffle, sample} from "underscore";
 import Render from "../index";
@@ -75,6 +76,9 @@ function AuthorQuizEntry() {
         {...currState}
         onAnswerSelected={onAnswerSelected}
       />
+      <p>
+        <Link to='/add'>Add New Author</Link>
+      </p>
     </div>
   );
 }

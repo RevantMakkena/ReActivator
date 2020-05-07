@@ -1,15 +1,22 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import {Route, BrowserRouter} from "react-router-dom";
 import "./index.css";
 import * as serviceWorker from "./serviceWorker";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import AuthorQuizEntry from "./AuthorQuiz/AuthorQuizEntry";
+import AddNewAuthor from "./AuthorQuiz/AddNewAuthor";
 
 function Render() {
   ReactDOM.render(
     <React.StrictMode>
       <>
-        <AuthorQuizEntry />
+        <BrowserRouter>
+          <React.Fragment>
+            <Route exact path='/' component={AuthorQuizEntry} />
+            <Route path='/add' component={AddNewAuthor} />
+          </React.Fragment>
+        </BrowserRouter>
       </>
     </React.StrictMode>,
     document.getElementById("root")
