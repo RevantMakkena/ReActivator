@@ -1,9 +1,9 @@
 import React from "react";
 import AuthorQuiz from "./AuthorQuiz";
-import {Link} from "react-router-dom";
 //import {currState, onAnswerSelected} from "../AuthorQuizData";
 import {shuffle, sample} from "underscore";
 import Render from "../index";
+import {Link} from "react-router-dom";
 
 //#region  Data for Author Quiz
 
@@ -72,13 +72,11 @@ function onAnswerSelected(answer) {
 function AuthorQuizEntry() {
   return (
     <div>
+      <Link to='/add'>Add New Author</Link>
       <AuthorQuiz
         {...currState}
         onAnswerSelected={onAnswerSelected}
       />
-      <p>
-        <Link to='/add'>Add New Author</Link>
-      </p>
     </div>
   );
 }

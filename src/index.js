@@ -7,20 +7,20 @@ import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import AuthorQuizEntry from "./AuthorQuiz/AuthorQuizEntry";
 import AddNewAuthor from "./AuthorQuiz/AddNewAuthor";
 import JsWorks from "./JSWorks/WorkWithObjects";
-import JsArray from "./JSWorks/JsArrays";
+import AppEntry from "./AppEntry";
 
 function Render() {
   ReactDOM.render(
     <React.StrictMode>
       <>
-        {/* <BrowserRouter>
+        <BrowserRouter>
           <React.Fragment>
-            <Route exact path='/' component={AuthorQuizEntry} />
+            <Route exact path='/' component={AppEntry} />
+            <Route path='/authorQuiz' component={AuthorQuizEntry} />
             <Route path='/add' component={AddNewAuthor} />
+            <Route path='/getEmployees' component={JsWorks} />
           </React.Fragment>
-        </BrowserRouter> */}
-        <JsWorks />
-        <JsArray />
+        </BrowserRouter>
       </>
     </React.StrictMode>,
     document.getElementById("root")
