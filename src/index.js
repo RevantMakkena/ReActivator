@@ -6,17 +6,21 @@ import * as serviceWorker from "./serviceWorker";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import AuthorQuizEntry from "./AuthorQuiz/AuthorQuizEntry";
 import AddNewAuthor from "./AuthorQuiz/AddNewAuthor";
+import JsWorks from "./JSWorks/WorkWithObjects";
+import JsArray from "./JSWorks/JsArrays";
 
 function Render() {
   ReactDOM.render(
     <React.StrictMode>
       <>
-        <BrowserRouter>
+        {/* <BrowserRouter>
           <React.Fragment>
             <Route exact path='/' component={AuthorQuizEntry} />
             <Route path='/add' component={AddNewAuthor} />
           </React.Fragment>
-        </BrowserRouter>
+        </BrowserRouter> */}
+        <JsWorks />
+        <JsArray />
       </>
     </React.StrictMode>,
     document.getElementById("root")

@@ -23,3 +23,16 @@
 .answer:hover {
   background-color: #d0e3f0;
 }
+
+.addAuthorForm {
+  width: 80%;
+  margin: 50px 10%;
+}
+
+.addAuthorForm_Input {
+  margin-bottom: 20px;
+}
+
+.addAuthorForm_Input > label {
+  display: block;
+}

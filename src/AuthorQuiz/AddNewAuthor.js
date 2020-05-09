@@ -1,8 +1,12 @@
 import React from "react";
+import AuthorForm from "./AuthorForm";
 
 function AddNewAuthor({match}) {
   return (
-    <div>Hi Guy's, I'm the new author {JSON.stringify(match)}</div>
+    <div className='addAuthorForm'>
+      <h1>Add New Author</h1>
+      <AuthorForm />
+    </div>
   );
 }
 
