@@ -3,7 +3,9 @@ import AuthorQuiz from "./AuthorQuiz";
 //import {currState, onAnswerSelected} from "../AuthorQuizData";
 import {shuffle, sample} from "underscore";
 import Render from "../index";
-import {Link} from "react-router-dom";
+import AddNewAuthor from "./AddNewAuthor";
+// import {Link} from "react-router-dom";
+//withRouter is useful to push the application back - Like history
 
 //#region  Data for Author Quiz
 
@@ -39,8 +41,13 @@ const authors = [
 ];
 
 function getTurnData(authors) {
-  const allBooks = authors.reduce(function (p, c, i) {
-    return p.concat(c.books);
+  const allBooks = authors.reduce(function (total, current, index) {
+    console.log(
+      `Total is ${JSON.stringify(
+        total
+      )} , Current is ${JSON.stringify(current)}, Index is ${index}`
+    );
+    return total.concat(current.books);
   }, []);
   const fourRandomBooks = shuffle(allBooks).slice(0, 4);
   const answer = sample(fourRandomBooks);
@@ -53,11 +60,14 @@ function getTurnData(authors) {
   };
 }
 
-const currState = {
-  turnData: getTurnData(authors),
-  highlight: "",
-};
+let currState = resetState();
 
+function resetState() {
+  return {
+    turnData: getTurnData(authors),
+    highlight: "",
+  };
+}
 function onAnswerSelected(answer) {
   debugger;
   console.log(answer);
@@ -67,16 +77,28 @@ function onAnswerSelected(answer) {
   currState.highlight = isCorrect ? "correct" : "wrong";
   Render();
 }
+
+function onAddAuthor(author) {
+  authors.push(author);
+}
+
 //#endregion
 
 function AuthorQuizEntry() {
   return (
     <div>
-      <Link to='/add'>Add New Author</Link>
+      {/* <button className='btn-dark btn-block'>
+        <Link to='/add'>Add New Author</Link>
+      </button> */}
       <AuthorQuiz
         {...currState}
         onAnswerSelected={onAnswerSelected}
+        onContinue={() => {
+          currState = resetState();
+          Render();
+        }}
       />
+      <AddNewAuthor onAddAuthor={onAddAuthor} />
     </div>
   );
 }

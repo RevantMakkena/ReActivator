@@ -5,9 +5,10 @@ import "./index.css";
 import * as serviceWorker from "./serviceWorker";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import AuthorQuizEntry from "./AuthorQuiz/AuthorQuizEntry";
-import AddNewAuthor from "./AuthorQuiz/AddNewAuthor";
+// import AddNewAuthor from "./AuthorQuiz/AddNewAuthor";
 import JsWorks from "./JSWorks/WorkWithObjects";
 import AppEntry from "./AppEntry";
+// import AuthorFormWrapper from "./AuthorQuiz/AddNewAuthor";
 
 function Render() {
   ReactDOM.render(
@@ -17,7 +18,7 @@ function Render() {
           <React.Fragment>
             <Route exact path='/' component={AppEntry} />
             <Route path='/authorQuiz' component={AuthorQuizEntry} />
-            <Route path='/add' component={AddNewAuthor} />
+            {/* <Route path='/add' component={AuthorFormWrapper} /> */}
             <Route path='/getEmployees' component={JsWorks} />
           </React.Fragment>
         </BrowserRouter>
