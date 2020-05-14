@@ -20,11 +20,11 @@
     "/_polyfills": [
       "static/runtime/polyfills.js"
     ],
-    "/useRefAndEffectEx": [
+    "/hooks/useeffectex": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/useRefNoEffect": [
+    "/hooks/userefex": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]

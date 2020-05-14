@@ -1,27 +1,16 @@
-import React, {useState} from "react";
-const inputElement = () => {
-  const [inputText, setInputText] = useState("");
-  const [inputHistory, setInputHistory] = useState([]);
-  return (
-    <div>
-      <div>
-        <input
-          onChange={(e) => {
-            setInputText(e.target.value);
-            setInputHistory([...inputHistory, e.target.value]);
-          }}
-          placeholder="Enter Some Text"
-        />
-        {inputText}
-        <br />
-        <ul>
-          {inputHistory.map((history) => (
-            <li>{history}</li>
-          ))}
-        </ul>
-      </div>
-    </div>
-  );
-};
+import React from "react";
+import {Link} from "next/link";
+import useStateEx from "./Hooks/useStateEx";
 
-export default inputElement;
+function Index() {
+  return (
+    <ul>
+      <li>
+        <Link href={useStateEx}>Home</Link>
+      </li>
+      <li></li>
+    </ul>
+  );
+}
+
+export default Index;
