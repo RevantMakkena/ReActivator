@@ -8,7 +8,7 @@ function CoursesPage() {
     getCourses().then((_courses) => {
       setCourses(_courses);
     });
-  }, [courses]);
+  }, []);
 
   return (
     <>
