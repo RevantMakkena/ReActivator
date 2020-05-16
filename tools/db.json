@@ -72,19 +72,11 @@
     },
     {
       "id": 11,
-      "slug": "dfgh",
-      "title": "dfgh",
-      "authorId": 1,
-      "category": "dfgh",
-      "createdAt": 1589653005828
-    },
-    {
-      "id": 12,
-      "slug": "asdfg",
-      "title": "asdfg",
+      "slug": "hello",
+      "title": "Hello",
       "authorId": 2,
-      "category": "asdfb",
-      "createdAt": 1589653166331
+      "category": "Hi",
+      "createdAt": 1589655130787
     }
   ],
   "authors": [
