@@ -1,21 +1,16 @@
 import React from "react";
+import TextInput from "./common/TextInput";
 
 function CourseForm(props) {
   return (
-    <form>
-      <div className="form-group">
-        <label htmlFor="title">Title</label>
-        <div className="field">
-          <input
-            id="title"
-            type="text"
-            name="title"
-            className="form-control"
-            value={props.course.title}
-            onChange={props.onTitleChange}
-          />
-        </div>
-      </div>
+    <form onSubmit={props.onSubmit}>
+      <TextInput
+        id="title"
+        label="title"
+        name="title"
+        value={props.course.title}
+        onChange={props.onChange}
+      />
 
       <div className="form-group">
         <label htmlFor="author">Author</label>
@@ -24,6 +19,7 @@ function CourseForm(props) {
             id="author"
             name="authorId"
             value={props.course.authorId || ""}
+            onChange={props.onChange}
             className="form-control"
           >
             <option value="" />
@@ -33,18 +29,13 @@ function CourseForm(props) {
         </div>
       </div>
 
-      <div className="form-group">
-        <label htmlFor="category">Category</label>
-        <div className="field">
-          <input
-            type="text"
-            id="category"
-            name="category"
-            className="form-control"
-            value={props.course.category}
-          />
-        </div>
-      </div>
+      <TextInput
+        id="category"
+        name="category"
+        label="category"
+        onChange={props.onChange}
+        value={props.course.category}
+      />
 
       <input type="submit" value="Save" className="btn btn-primary" />
     </form>
