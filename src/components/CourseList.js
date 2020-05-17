@@ -21,6 +21,15 @@ const CourseList = (props) => {
               </td>
               <td>{course.authorId}</td>
               <td>{course.category}</td>
+              <td>
+                <button
+                  type="button"
+                  className="btn btn-danger"
+                  onClick={() => props.onDelete(course.id)}
+                >
+                  Delete
+                </button>
+              </td>
             </tr>
           );
         })}
