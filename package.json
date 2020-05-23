@@ -2,7 +2,10 @@
   "name": "ps-redux",
   "description": "React and Redux Pluralsight course by Cory House",
   "scripts": {
-    "start": "webpack-dev-server --config webpack.config.dev.js --port 3000"
+    "start": "run-p start:dev start:api",
+    "start:dev": "cross-env REACT_APP_API_URL=http://localhost:3001 webpack-dev-server --config webpack.config.dev.js --port 3000",
+    "prestart:api": "node tools/createMockDb.js",
+    "start:api": "node tools/apiServer.js"
   },
   "dependencies": {
     "bootstrap": "4.3.1",
@@ -22,6 +25,7 @@
     "babel-eslint": "10.0.1",
     "babel-loader": "8.0.5",
     "babel-preset-react-app": "7.0.2",
+    "cross-env": "^7.0.2",
     "css-loader": "2.1.1",
     "cssnano": "4.1.10",
     "enzyme": "3.9.0",
