@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from "react";
 import {getUsers} from "../../api/userApi";
 import "./User.css";
+import {Link} from "react-router-dom";
+import ModifyUser from "./ModifyUser";
 
 export default function User() {
   const [users, setUsers] = useState([]);
@@ -34,7 +36,14 @@ export default function User() {
                   <td>{user.City}</td>
                   <td>{user.State}</td>
                   <td>
-                    <button className="btn btn-outline-primary">Edit</button>
+                    <ModifyUser userData={user} />
+                  </td>
+                  <td>
+                    <button className="btn btn-outline-primary">
+                      <Link to={{pathname: "/edit", userData: {...user}}}>
+                        Edit
+                      </Link>
+                    </button>
                   </td>
                   <td>
                     <button className="btn btn-outline-danger">Delete</button>
