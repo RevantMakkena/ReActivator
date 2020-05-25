@@ -1,24 +1,14 @@
 import React, {useState, useEffect} from "react";
 import {getUsers} from "../api/userApi";
-import {getEmployees} from "../api/employeeApi";
 
 export default function User() {
   const [users, setUsers] = useState([]);
-  const [emps, setEmps] = useState([]);
 
   useEffect(() => {
-    getUsers((_users) => {
-      console.log(JSON.stringify(_users));
+    getUsers().then((_users) => {
       setUsers(_users);
     });
   }, [users]);
-
-  useEffect(() => {
-    getEmployees((_users) => {
-      console.log(JSON.stringify(_users));
-      setEmps(_users);
-    });
-  }, [emps]);
 
   return (
     <>
