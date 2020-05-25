@@ -1,6 +1,4 @@
 export async function handleResponse(response) {
-  debugger;
-  console.log(response);
   if (response.ok) return JSON.parse(JSON.stringify(response));
   if (response.status === 400) {
     // So, a server-side validation error occurred.
