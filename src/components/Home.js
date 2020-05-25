@@ -1,6 +1,6 @@
 import React from "react";
 import {Switch, Route} from "react-router-dom";
-import User from "./User";
+import User from "./User/User";
 import ModifyUser from "./ModifyUser";
 import Navigator from "./common/Navigator";
 
