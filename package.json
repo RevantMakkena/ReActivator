@@ -1,9 +1,9 @@
 {
   "name": "ps-redux",
-  "description": "React and Redux Pluralsight course by Cory House",
+  "description": "",
   "scripts": {
     "start": "run-p start:dev start:api",
-    "start:dev": "cross-env REACT_APP_API_URL=http://localhost:3001 webpack-dev-server --config webpack.config.dev.js --port 3000",
+    "start:dev": "cross-env REACT_APP_API_URL=http://localhost:3001 react-scripts start",
     "prestart:api": "node tools/createMockDb.js",
     "start:api": "node tools/apiServer.js"
   },
@@ -17,6 +17,7 @@
     "react-icons": "^3.10.0",
     "react-redux": "6.0.1",
     "react-router-dom": "5.0.0",
+    "react-scripts": "^3.4.1",
     "react-toastify": "4.5.2",
     "redux": "4.0.1",
     "redux-thunk": "2.3.0",
@@ -97,5 +98,17 @@
       }
     },
     "root": true
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
