@@ -1,22 +1,14 @@
-import {handleResponse, handleError} from "./apiUtils";
+import axios from "axios";
 const baseUrl = process.env.REACT_APP_API_URL + "/users/";
 
 export function getUsers() {
-  return fetch(baseUrl).then(handleResponse).catch(handleError);
+  return axios.get(baseUrl).then((res) => res.data);
 }
 
-export function saveUser(user) {
-  return fetch(baseUrl + (user.id || ""), {
-    method: user.id ? "PUT" : "POST", // POST for create, PUT to update when id already exists.
-    headers: {"content-type": "application/json"},
-    body: JSON.stringify(user),
-  })
-    .then(handleResponse)
-    .catch(handleError);
-}
-
-export function deleteUser(userId) {
-  return fetch(baseUrl + userId, {method: "DELETE"})
-    .then(handleResponse)
-    .catch(handleError);
+export function deleteUser(id) {
+  return axios.delete(baseUrl + id);
+  // .then((res) => {
+  //   if (res.status === 200) return true;
+  //   else false;
+  // });
 }

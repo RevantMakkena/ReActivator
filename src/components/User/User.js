@@ -3,25 +3,28 @@ import {getUsers, deleteUser} from "../../api/userApi";
 import "./User.css";
 import {Link} from "react-router-dom";
 import ModifyUser from "./ModifyUser";
-import axios from "axios";
 
 export default function User() {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:3001/users").then((res) => {
-      setUsers(res.data);
+    getUsers().then((res) => {
+      setUsers(res);
     });
   }, []);
 
-  function onUserDelete(Id) {
-    deleteUser(Id);
+  function onUserDelete(id) {
+    if (deleteUser(id)) {
+      getUsers().then((res) => {
+        setUsers(res);
+      });
+    }
   }
 
   return (
     <>
-      <div className="jumbotron">
-        <table className="table table-hover">
+      <div className='jumbotron'>
+        <table className='table table-hover'>
           <thead>
             <tr>
               <th>First Name</th>
@@ -34,7 +37,7 @@ export default function User() {
           <tbody>
             {users.map((user) => {
               return (
-                <tr key={user.Id}>
+                <tr key={user.id}>
                   <td>{user.FirstName}</td>
                   <td>{user.LastName}</td>
                   <td>{user.Company}</td>
@@ -44,17 +47,17 @@ export default function User() {
                     <ModifyUser userData={user} />
                   </td>
                   <td>
-                    <button className="btn btn-outline-primary">
-                      <Link to={{pathname: "/edit", userData: {...user}}}>
+                    <button className='btn btn-outline-primary'>
+                      <Link
+                        to={{pathname: "/edit", userData: {...user}}}>
                         Edit
                       </Link>
                     </button>
                   </td>
                   <td>
                     <button
-                      className="btn btn-outline-danger"
-                      onClick={() => onUserDelete(user.Id)}
-                    >
+                      className='btn btn-outline-danger'
+                      onClick={() => onUserDelete(user.id)}>
                       Delete
                     </button>
                   </td>
