@@ -1,17 +1,22 @@
 import React, {useState, useEffect} from "react";
-import {getUsers} from "../../api/userApi";
+import {getUsers, deleteUser} from "../../api/userApi";
 import "./User.css";
 import {Link} from "react-router-dom";
 import ModifyUser from "./ModifyUser";
+import axios from "axios";
 
 export default function User() {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    getUsers().then((_users) => {
-      setUsers(_users);
+    axios.get("http://localhost:3001/users").then((res) => {
+      setUsers(res.data);
     });
   }, []);
+
+  function onUserDelete(Id) {
+    deleteUser(Id);
+  }
 
   return (
     <>
@@ -46,7 +51,12 @@ export default function User() {
                     </button>
                   </td>
                   <td>
-                    <button className="btn btn-outline-danger">Delete</button>
+                    <button
+                      className="btn btn-outline-danger"
+                      onClick={() => onUserDelete(user.Id)}
+                    >
+                      Delete
+                    </button>
                   </td>
                 </tr>
               );

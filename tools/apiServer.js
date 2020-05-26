@@ -31,8 +31,8 @@ server.use((req, res, next) => {
   next();
 });
 
-server.post("/courses/", function (req, res, next) {
-  //const error = validateCourse(req.body);
+server.post("/users/", function (req, res, next) {
+  const error = validateCourse();
   if (error) {
     res.status(400).send(error);
   } else {
@@ -60,9 +60,6 @@ function createSlug(value) {
     .toLowerCase();
 }
 
-// function validateCourse(course) {
-//   if (!course.title) return "Title is required.";
-//   if (!course.authorId) return "Author is required.";
-//   if (!course.category) return "Category is required.";
-//   return "";
-// }
+function validateCourse() {
+  return "";
+}

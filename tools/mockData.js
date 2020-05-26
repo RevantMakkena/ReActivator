@@ -1,6 +1,6 @@
 const users = [
   {
-    Id: 1,
+    id: 1,
     FirstName: "Job",
     LastName: "Brugman",
     PhNo: "907-304-0001",
@@ -60,7 +60,7 @@ const users = [
     ],
   },
   {
-    Id: 2,
+    id: 2,
     FirstName: "Portia",
     LastName: "Cashford",
     PhNo: "786-503-4585",
@@ -126,7 +126,7 @@ const users = [
     ],
   },
   {
-    Id: 3,
+    id: 3,
     FirstName: "Felizio",
     LastName: "Haywood",
     PhNo: "704-504-6846",
@@ -180,7 +180,7 @@ const users = [
       {
         CreditCardNumber: "3553363153449613",
         CardType: "jcb",
-        CurrencyType: "IDR",
+        CurrencyType: "idR",
       },
       {
         CreditCardNumber: "3536065837182617",
@@ -190,7 +190,7 @@ const users = [
     ],
   },
   {
-    Id: 4,
+    id: 4,
     FirstName: "Beatrisa",
     LastName: "Simeonov",
     PhNo: "951-300-0022",
@@ -264,7 +264,7 @@ const users = [
     ],
   },
   {
-    Id: 5,
+    id: 5,
     FirstName: "Colette",
     LastName: "Mar",
     PhNo: "651-541-9997",
@@ -322,7 +322,7 @@ const users = [
     ],
   },
   {
-    Id: 6,
+    id: 6,
     FirstName: "Danyelle",
     LastName: "Wellan",
     PhNo: "407-557-5094",
@@ -381,7 +381,7 @@ const users = [
     ],
   },
   {
-    Id: 7,
+    id: 7,
     FirstName: "Jack",
     LastName: "Pardew",
     PhNo: "810-426-4127",
@@ -450,7 +450,7 @@ const users = [
     ],
   },
   {
-    Id: 8,
+    id: 8,
     FirstName: "Eberhard",
     LastName: "Flageul",
     PhNo: "901-211-2466",
@@ -502,7 +502,7 @@ const users = [
     ],
   },
   {
-    Id: 9,
+    id: 9,
     FirstName: "Dorthy",
     LastName: "Harwood",
     PhNo: "301-509-6916",
@@ -571,7 +571,7 @@ const users = [
     ],
   },
   {
-    Id: 10,
+    id: 10,
     FirstName: "Archibold",
     LastName: "Spires",
     PhNo: "203-864-8562",
@@ -635,7 +635,7 @@ const users = [
     ],
   },
   {
-    Id: 11,
+    id: 11,
     FirstName: "Allissa",
     LastName: "Sheaber",
     PhNo: "202-539-8836",
@@ -705,7 +705,7 @@ const users = [
     ],
   },
   {
-    Id: 12,
+    id: 12,
     FirstName: "Gaspard",
     LastName: "Lewis",
     PhNo: "256-798-0614",
@@ -764,7 +764,7 @@ const users = [
     ],
   },
   {
-    Id: 13,
+    id: 13,
     FirstName: "Stephannie",
     LastName: "Bryenton",
     PhNo: "601-465-9171",
@@ -828,7 +828,7 @@ const users = [
     ],
   },
   {
-    Id: 14,
+    id: 14,
     FirstName: "Nikolas",
     LastName: "Cosser",
     PhNo: "330-575-4258",
@@ -886,7 +886,7 @@ const users = [
     ],
   },
   {
-    Id: 15,
+    id: 15,
     FirstName: "Timmi",
     LastName: "Tythe",
     PhNo: "765-311-9998",
@@ -962,7 +962,7 @@ const users = [
     ],
   },
   {
-    Id: 16,
+    id: 16,
     FirstName: "Rolland",
     LastName: "Scrivin",
     PhNo: "513-189-0381",
@@ -1027,12 +1027,12 @@ const users = [
       {
         CreditCardNumber: "201667712089658",
         CardType: "diners-club-enroute",
-        CurrencyType: "IDR",
+        CurrencyType: "idR",
       },
     ],
   },
   {
-    Id: 17,
+    id: 17,
     FirstName: "Sher",
     LastName: "Little",
     PhNo: "651-942-8568",
@@ -1092,7 +1092,7 @@ const users = [
     ],
   },
   {
-    Id: 18,
+    id: 18,
     FirstName: "Obadiah",
     LastName: "Gelland",
     PhNo: "414-586-0163",
@@ -1156,12 +1156,12 @@ const users = [
       {
         CreditCardNumber: "3542270483948491",
         CardType: "jcb",
-        CurrencyType: "IDR",
+        CurrencyType: "idR",
       },
     ],
   },
   {
-    Id: 19,
+    id: 19,
     FirstName: "Tilly",
     LastName: "Thirsk",
     PhNo: "202-746-8874",
@@ -1218,7 +1218,7 @@ const users = [
     ],
   },
   {
-    Id: 20,
+    id: 20,
     FirstName: "Ellwood",
     LastName: "Diable",
     PhNo: "805-984-6422",
@@ -1282,7 +1282,7 @@ const users = [
     ],
   },
   {
-    Id: 21,
+    id: 21,
     FirstName: "Aksel",
     LastName: "Kolczynski",
     PhNo: "425-995-8218",
@@ -1339,7 +1339,7 @@ const users = [
     ],
   },
   {
-    Id: 22,
+    id: 22,
     FirstName: "Ty",
     LastName: "Mulqueen",
     PhNo: "904-189-9834",
@@ -1410,7 +1410,7 @@ const users = [
     ],
   },
   {
-    Id: 23,
+    id: 23,
     FirstName: "Pernell",
     LastName: "Elmar",
     PhNo: "361-665-5586",
@@ -1474,7 +1474,7 @@ const users = [
     ],
   },
   {
-    Id: 24,
+    id: 24,
     FirstName: "Galvin",
     LastName: "Aimable",
     PhNo: "916-474-9491",
@@ -1533,7 +1533,7 @@ const users = [
       {
         CreditCardNumber: "3537805459842603",
         CardType: "jcb",
-        CurrencyType: "IDR",
+        CurrencyType: "idR",
       },
       {
         CreditCardNumber: "63046155235703846",
@@ -1543,7 +1543,7 @@ const users = [
     ],
   },
   {
-    Id: 25,
+    id: 25,
     FirstName: "Gabbi",
     LastName: "Greatbatch",
     PhNo: "509-109-7123",
@@ -1613,7 +1613,7 @@ const users = [
     ],
   },
   {
-    Id: 26,
+    id: 26,
     FirstName: "Wilhelmine",
     LastName: "Bode",
     PhNo: "253-650-0087",
@@ -1677,7 +1677,7 @@ const users = [
     ],
   },
   {
-    Id: 27,
+    id: 27,
     FirstName: "Lusa",
     LastName: "Jakel",
     PhNo: "210-387-7707",
@@ -1735,7 +1735,7 @@ const users = [
     ],
   },
   {
-    Id: 28,
+    id: 28,
     FirstName: "Nancey",
     LastName: "Primo",
     PhNo: "915-394-3246",
@@ -1804,7 +1804,7 @@ const users = [
     ],
   },
   {
-    Id: 29,
+    id: 29,
     FirstName: "Ellery",
     LastName: "Dymott",
     PhNo: "786-651-4550",
@@ -1875,7 +1875,7 @@ const users = [
     ],
   },
   {
-    Id: 30,
+    id: 30,
     FirstName: "Lacee",
     LastName: "Broxis",
     PhNo: "209-672-6588",
@@ -1934,7 +1934,7 @@ const users = [
     ],
   },
   {
-    Id: 31,
+    id: 31,
     FirstName: "Fabian",
     LastName: "Startin",
     PhNo: "518-574-5821",
@@ -2004,7 +2004,7 @@ const users = [
     ],
   },
   {
-    Id: 32,
+    id: 32,
     FirstName: "Harriet",
     LastName: "McKie",
     PhNo: "512-101-0895",
@@ -2074,7 +2074,7 @@ const users = [
     ],
   },
   {
-    Id: 33,
+    id: 33,
     FirstName: "Rachelle",
     LastName: "McVeighty",
     PhNo: "901-315-9738",
@@ -2137,7 +2137,7 @@ const users = [
     ],
   },
   {
-    Id: 34,
+    id: 34,
     FirstName: "Carlotta",
     LastName: "Dawdary",
     PhNo: "301-811-2262",
@@ -2197,17 +2197,17 @@ const users = [
       {
         CreditCardNumber: "3569910846247556",
         CardType: "jcb",
-        CurrencyType: "IDR",
+        CurrencyType: "idR",
       },
       {
         CreditCardNumber: "5100171135787239",
         CardType: "mastercard",
-        CurrencyType: "IDR",
+        CurrencyType: "idR",
       },
     ],
   },
   {
-    Id: 35,
+    id: 35,
     FirstName: "Falito",
     LastName: "McGilleghole",
     PhNo: "818-663-9180",
@@ -2286,7 +2286,7 @@ const users = [
 
 const employees = [
   {
-    Id: 36,
+    id: 36,
     First_Name: "Hadrian",
     Last_Name: "Sybbe",
     "Phone Number": "785-799-1294",
@@ -2362,7 +2362,7 @@ const employees = [
     ],
   },
   {
-    Id: 37,
+    id: 37,
     First_Name: "Anne-corinne",
     Last_Name: "McConaghy",
     "Phone Number": "312-536-9862",
@@ -2436,7 +2436,7 @@ const employees = [
     ],
   },
   {
-    Id: 38,
+    id: 38,
     First_Name: "Land",
     Last_Name: "Hathaway",
     "Phone Number": "718-256-7470",
@@ -2495,7 +2495,7 @@ const employees = [
     ],
   },
   {
-    Id: 39,
+    id: 39,
     First_Name: "Farris",
     Last_Name: "Turbard",
     "Phone Number": "561-206-6008",
@@ -2508,7 +2508,7 @@ const employees = [
     Company: "Myworks",
     Movies: [
       "Crimes of Passion",
-      "Idiot's Delight",
+      "idiot's Delight",
       "Bird of the Air, A (Loop, The)",
       "Deathwatch",
     ],
@@ -2553,7 +2553,7 @@ const employees = [
     ],
   },
   {
-    Id: 40,
+    id: 40,
     First_Name: "Elissa",
     Last_Name: "Lynnitt",
     "Phone Number": "570-745-5981",
@@ -2628,7 +2628,7 @@ const employees = [
     ],
   },
   {
-    Id: 41,
+    id: 41,
     First_Name: "Alvie",
     Last_Name: "Chicchetto",
     "Phone Number": "925-793-1834",
@@ -2688,7 +2688,7 @@ const employees = [
     ],
   },
   {
-    Id: 42,
+    id: 42,
     First_Name: "Carter",
     Last_Name: "Verdun",
     "Phone Number": "405-300-7713",
@@ -2740,7 +2740,7 @@ const employees = [
     ],
   },
   {
-    Id: 43,
+    id: 43,
     First_Name: "Erastus",
     Last_Name: "Gaylord",
     "Phone Number": "702-637-0527",
@@ -2800,13 +2800,13 @@ const employees = [
       {
         CreditCardNumber: "675919882517464210",
         CardType: "maestro",
-        CurrencyType: "IDR",
+        CurrencyType: "idR",
       },
     ],
   },
   {
-    Id: 44,
-    First_Name: "Idelle",
+    id: 44,
+    First_Name: "idelle",
     Last_Name: "Flannery",
     "Phone Number": "504-146-1355",
     Email: "iflannery17@admin.ch",
@@ -2869,7 +2869,7 @@ const employees = [
     ],
   },
   {
-    Id: 45,
+    id: 45,
     First_Name: "Marketa",
     Last_Name: "McHale",
     "Phone Number": "501-603-2282",
@@ -2928,7 +2928,7 @@ const employees = [
     ],
   },
   {
-    Id: 46,
+    id: 46,
     First_Name: "Robbie",
     Last_Name: "Bamell",
     "Phone Number": "812-754-1860",
@@ -2987,12 +2987,12 @@ const employees = [
       {
         CreditCardNumber: "564182940014314068",
         CardType: "switch",
-        CurrencyType: "IDR",
+        CurrencyType: "idR",
       },
     ],
   },
   {
-    Id: 47,
+    id: 47,
     First_Name: "Boniface",
     Last_Name: "Pead",
     "Phone Number": "215-373-0964",
@@ -3061,7 +3061,7 @@ const employees = [
     ],
   },
   {
-    Id: 48,
+    id: 48,
     First_Name: "Shelagh",
     Last_Name: "Grimsdith",
     "Phone Number": "717-632-7971",
@@ -3126,7 +3126,7 @@ const employees = [
     ],
   },
   {
-    Id: 49,
+    id: 49,
     First_Name: "Timothy",
     Last_Name: "Hexham",
     "Phone Number": "904-864-8336",
@@ -3191,7 +3191,7 @@ const employees = [
     ],
   },
   {
-    Id: 50,
+    id: 50,
     First_Name: "Paquito",
     Last_Name: "Burnep",
     "Phone Number": "646-749-1688",
@@ -3261,7 +3261,7 @@ const employees = [
     ],
   },
   {
-    Id: 51,
+    id: 51,
     First_Name: "Amitie",
     Last_Name: "O'Crevan",
     "Phone Number": "205-916-7083",
@@ -3336,7 +3336,7 @@ const employees = [
     ],
   },
   {
-    Id: 52,
+    id: 52,
     First_Name: "Alphard",
     Last_Name: "Menezes",
     "Phone Number": "559-597-2273",
@@ -3389,7 +3389,7 @@ const employees = [
     ],
   },
   {
-    Id: 53,
+    id: 53,
     First_Name: "Yance",
     Last_Name: "Ruthen",
     "Phone Number": "213-720-9715",
@@ -3457,7 +3457,7 @@ const employees = [
     ],
   },
   {
-    Id: 54,
+    id: 54,
     First_Name: "Karyn",
     Last_Name: "Gutch",
     "Phone Number": "609-511-2795",
@@ -3501,7 +3501,7 @@ const employees = [
     ],
   },
   {
-    Id: 55,
+    id: 55,
     First_Name: "Katherina",
     Last_Name: "Slyde",
     "Phone Number": "763-422-2691",
@@ -3559,7 +3559,7 @@ const employees = [
     ],
   },
   {
-    Id: 56,
+    id: 56,
     First_Name: "Grove",
     Last_Name: "Davis",
     "Phone Number": "410-383-1530",
@@ -3618,7 +3618,7 @@ const employees = [
     ],
   },
   {
-    Id: 57,
+    id: 57,
     First_Name: "Kiri",
     Last_Name: "Kastel",
     "Phone Number": "423-198-8536",
@@ -3673,7 +3673,7 @@ const employees = [
     ],
   },
   {
-    Id: 58,
+    id: 58,
     First_Name: "Shirleen",
     Last_Name: "Quest",
     "Phone Number": "952-201-4497",
@@ -3737,7 +3737,7 @@ const employees = [
     ],
   },
   {
-    Id: 59,
+    id: 59,
     First_Name: "Chelsie",
     Last_Name: "Crohan",
     "Phone Number": "517-852-4012",
@@ -3803,7 +3803,7 @@ const employees = [
     ],
   },
   {
-    Id: 60,
+    id: 60,
     First_Name: "Bryce",
     Last_Name: "Topaz",
     "Phone Number": "904-801-5700",
@@ -3867,7 +3867,7 @@ const employees = [
     ],
   },
   {
-    Id: 61,
+    id: 61,
     First_Name: "Gareth",
     Last_Name: "Gisburne",
     "Phone Number": "314-733-0683",
@@ -3929,7 +3929,7 @@ const employees = [
     ],
   },
   {
-    Id: 62,
+    id: 62,
     First_Name: "Orville",
     Last_Name: "Kinner",
     "Phone Number": "502-662-0041",
@@ -3994,7 +3994,7 @@ const employees = [
     ],
   },
   {
-    Id: 63,
+    id: 63,
     First_Name: "Denny",
     Last_Name: "Shearme",
     "Phone Number": "806-467-2975",
@@ -4054,12 +4054,12 @@ const employees = [
       {
         CreditCardNumber: "3540084360833284",
         CardType: "jcb",
-        CurrencyType: "IDR",
+        CurrencyType: "idR",
       },
     ],
   },
   {
-    Id: 64,
+    id: 64,
     First_Name: "Lucie",
     Last_Name: "Downes",
     "Phone Number": "212-653-5346",
@@ -4127,7 +4127,7 @@ const employees = [
     ],
   },
   {
-    Id: 65,
+    id: 65,
     First_Name: "Drake",
     Last_Name: "Fryer",
     "Phone Number": "513-833-9250",
@@ -4180,7 +4180,7 @@ const employees = [
     ],
   },
   {
-    Id: 66,
+    id: 66,
     First_Name: "Normie",
     Last_Name: "Smidmor",
     "Phone Number": "214-813-0822",
@@ -4244,7 +4244,7 @@ const employees = [
     ],
   },
   {
-    Id: 67,
+    id: 67,
     First_Name: "Jackelyn",
     Last_Name: "Regler",
     "Phone Number": "786-876-6740",
@@ -4307,7 +4307,7 @@ const employees = [
     ],
   },
   {
-    Id: 68,
+    id: 68,
     First_Name: "Pippo",
     Last_Name: "Turfrey",
     "Phone Number": "720-944-9940",
@@ -4369,7 +4369,7 @@ const employees = [
     ],
   },
   {
-    Id: 69,
+    id: 69,
     First_Name: "Torrey",
     Last_Name: "Zannotelli",
     "Phone Number": "915-895-7247",
@@ -4445,7 +4445,7 @@ const employees = [
     ],
   },
   {
-    Id: 70,
+    id: 70,
     First_Name: "Gan",
     Last_Name: "Gipp",
     "Phone Number": "915-639-2034",
@@ -4525,7 +4525,7 @@ const authors = [
 const newCourse = {
   id: null,
   title: "",
-  authorId: null,
+  authorid: null,
   category: "",
 };
 
