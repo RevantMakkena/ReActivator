@@ -44,12 +44,8 @@ export default function User() {
                   <td>{user.City}</td>
                   <td>{user.State}</td>
                   <td>
-                    <ModifyUser userData={user} />
-                  </td>
-                  <td>
                     <button className='btn btn-outline-primary'>
-                      <Link
-                        to={{pathname: "/edit", userData: {...user}}}>
+                      <Link to={{pathname: `/edit/${user.id}`}}>
                         Edit
                       </Link>
                     </button>

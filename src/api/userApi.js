@@ -7,8 +7,10 @@ export function getUsers() {
 
 export function deleteUser(id) {
   return axios.delete(baseUrl + id);
-  // .then((res) => {
-  //   if (res.status === 200) return true;
-  //   else false;
-  // });
+}
+
+export function editUser(id) {
+  return axios
+    .get(baseUrl)
+    .then((res) => res.data.find((x) => x.id == id));
 }

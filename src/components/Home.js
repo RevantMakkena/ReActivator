@@ -9,8 +9,8 @@ export default function Home() {
     <>
       <Navigator />
       <Switch>
-        <Route path="/" exact component={User} />
-        <Route path="/edit" component={UserDetails} />
+        <Route path='/' exact component={User} />
+        <Route path='/edit/:id' component={UserDetails} />
         <Route component={User} />
       </Switch>
     </>
