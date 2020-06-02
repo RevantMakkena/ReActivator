@@ -1,9 +1,11 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import {SnackbarContent, TextField, Button} from "@material-ui/core";
 
 const AddNotes = () => {
   const [notes, setNotes] = useState([]);
   const [input, setInput] = useState("");
+
+  useEffect(() => {}, [notes]);
 
   const updateInput = (e) => {
     setInput(e.target.value);
@@ -47,11 +49,11 @@ const AddNotes = () => {
 const NoteComponent = (props) => {
   return (
     <div>
-      {props.notes
-        ? props.notes.map((currentNote) => {
+      {props.currentNote
+        ? props.currentNote.map((_currentNote) => {
             return (
               <SnackbarContent
-                message={currentNote}
+                message={_currentNote}
                 style={{marginBottom: "10px"}}></SnackbarContent>
             );
           })
