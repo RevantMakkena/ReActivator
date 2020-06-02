@@ -3,13 +3,32 @@ import {SnackbarContent, TextField, Button} from "@material-ui/core";
 
 const AddNotes = () => {
   const [notes, setNotes] = useState([]);
+  const [input, setInput] = useState("");
+
+  const updateInput = (e) => {
+    setInput(e.target.value);
+  };
+
+  const updateNotes = () => {
+    setNotes((_notes) => [..._notes, input]);
+    setInput("");
+  };
+
   return (
     <div>
       <div className='row'>
-        <TextField id='outlined-basic' label='Notes' />
+        <TextField
+          id='outlined-basic'
+          label='Notes'
+          value={input}
+          onChange={updateInput}
+        />
       </div>
       <div className='row'>
-        <Button variant='contained' color='primary'>
+        <Button
+          variant='contained'
+          color='primary'
+          onClick={updateNotes}>
           Add Notes
         </Button>
       </div>
@@ -30,9 +49,11 @@ const NoteComponent = (props) => {
     <div>
       {props.notes
         ? props.notes.map((currentNote) => {
-            <SnackbarContent
-              message={currentNote}
-              style={{marginBottom: "10px"}}></SnackbarContent>;
+            return (
+              <SnackbarContent
+                message={currentNote}
+                style={{marginBottom: "10px"}}></SnackbarContent>
+            );
           })
         : ""}
     </div>
