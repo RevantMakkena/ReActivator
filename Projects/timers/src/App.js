@@ -1,5 +1,5 @@
 import React from "react";
-import DateComponent from "./components/DateComponent";
+import DateComponent from "./components/AutoRunningTimer";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";

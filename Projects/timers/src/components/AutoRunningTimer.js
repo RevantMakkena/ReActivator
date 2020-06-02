@@ -6,44 +6,28 @@ const DateComponent = () => {
   const [hours, setHour] = useState(0);
 
   useEffect(() => {
-    setTimer();
+    setTimeout(() => {
+      if (tick === 59) {
+        if (minutes === 59) {
+          setTick(0);
+          setMinutes(0);
+          setHour((hours) => hours + 1);
+        } else {
+          setTick(0);
+          setMinutes((minutes) => minutes + 1);
+        }
+      } else {
+        setTick((tick) => tick + 1);
+      }
+    }, 1000);
   }, [tick]);
 
-  const setTimer = () => {
-    setSeconds();
-    if (tick === 60) {
-      updateMinutes();
-    }
-    if (minutes === 60) {
-      updateHours();
-    }
-  };
-
-  const setSeconds = () => {
-    setTimeout(() => {
-      setTick((tick) => tick + 1);
-    }, 1000);
-  };
-
-  const updateMinutes = () => {
-    if (tick === 60) {
-      setMinutes((minutes) => minutes + 1);
-    }
-  };
-
-  const updateHours = () => {
-    if (minutes === 60) {
-      setHour((hour) => hour + 1);
-    }
-  };
-
-  const date = new Date();
   return (
     <>
       <div className='row'>
         <div className='card border-primary mb-3'>
           <div className='card-header'>
-            <i className='fas fa-hourglass'></i>
+            <i className='fas fa-hourglass rotate'></i>
           </div>
           <div className='card-body text-primary'>
             <p className='card-text'>
