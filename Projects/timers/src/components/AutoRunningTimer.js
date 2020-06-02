@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 
-const DateComponent = () => {
+const AutoRunningTimer = () => {
   const [tick, setTick] = useState(0);
   const [minutes, setMinutes] = useState(0);
   const [hours, setHour] = useState(0);
@@ -40,4 +40,4 @@ const DateComponent = () => {
   );
 };
 
-export default DateComponent;
+export default AutoRunningTimer;

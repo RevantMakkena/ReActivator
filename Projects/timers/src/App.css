@@ -42,17 +42,6 @@
   font-size: 60px;
 }
 
-body {
-  height: 100vh;
-  display: flex;
-  transition: background 0.5s ease;
-  position: relative;
-}
-
-#root {
-  margin: auto;
-}
-
 .rotate {
   animation: rotation 4s infinite linear;
 }
@@ -64,4 +53,10 @@ body {
   to {
     transform: rotate(359deg);
   }
+}
+
+.row {
+  margin-top: 30px;
+  margin-left: 30%;
+  margin-right: 30%;
 }
