@@ -17,7 +17,9 @@ const AddCustomTimer = () => {
 
   return (
     <div>
-      <div className='row'>
+      <div
+        className='row'
+        style={{marginLeft: "30%", marginRight: "30%"}}>
         <TextField
           id='outlined-number'
           label='Number'
@@ -26,11 +28,14 @@ const AddCustomTimer = () => {
           onChange={updateCurrentTimer}
         />
       </div>
-      <div className='row'>
+      <div
+        className='row'
+        style={{marginLeft: "30%", marginRight: "30%"}}>
         <Button
           variant='contained'
           color='primary'
-          onClick={updateTimers}>
+          onClick={updateTimers}
+          style={{height: "38px"}}>
           Add Timer Interval
         </Button>
       </div>
@@ -47,14 +52,28 @@ const AddCustomTimer = () => {
 };
 
 const ShowAllTimers = (props) => {
+  const startTimer = (e) => {
+    debugger;
+  };
   return (
     <div>
       {props.currentTimers
         ? props.currentTimers.map((_currentTimer) => {
             return (
-              <SnackbarContent
-                message={_currentTimer}
-                style={{marginBottom: "10px"}}></SnackbarContent>
+              <>
+                <div className='row'>
+                  <SnackbarContent
+                    message={_currentTimer}
+                    style={{marginBottom: "10px"}}></SnackbarContent>
+                  <Button
+                    variant='contained'
+                    color='primary'
+                    value={_currentTimer}
+                    onClick={startTimer(_currentTimer)}>
+                    Start Timer
+                  </Button>
+                </div>
+              </>
             );
           })
         : ""}
