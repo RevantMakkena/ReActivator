@@ -8,6 +8,7 @@ import {
   CardContent,
   Typography,
   CardActions,
+  Grid,
 } from "@material-ui/core";
 
 const useStyles = makeStyles({
@@ -47,6 +48,14 @@ const useChildStyles = makeStyles((theme) => ({
   playIcon: {
     height: 38,
     width: 38,
+  },
+}));
+
+const rightChildStyles = makeStyles((theme) => ({
+  root: {
+    display: "flex",
+    maxWidth: 200,
+    marginLeft: "40%",
   },
 }));
 
@@ -92,40 +101,51 @@ const AddCustomTimer = () => {
           </Button>
         </CardActions>
       </Card>
-      <ShowAllTimers currentTimers={timers} />
+      <Grid container style={{marginTop: "2%"}}>
+        <ShowAllTimers currentTimers={timers} />
+      </Grid>
     </div>
   );
 };
 
 const ShowAllTimers = (props) => {
   const classes = useChildStyles();
-  const startTimer = (e) => {
-    debugger;
-  };
-
+  function startTimer(e) {
+    console.log("show all timers" + e);
+    // return (
+    //   <>
+    //     <startTimer time={e} />
+    //   </>
+    // );
+  }
   return (
     <>
       {props.currentTimers
         ? props.currentTimers.map((_currentTimer) => {
             return (
               <>
-                <Card className={classes.root}>
-                  <CardContent className={classes.content}>
-                    <Typography
-                      variant='subtitle1'
-                      color='textSecondary'>
-                      {_currentTimer}
-                    </Typography>
-                  </CardContent>
-                  <Button
-                    className={classes.cover}
-                    variant='contained'
-                    color='primary'
-                    value={_currentTimer}
-                    onClick={startTimer(_currentTimer)}>
-                    Start Timer
-                  </Button>
-                </Card>
+                <Grid item xs={3}>
+                  <Card className={classes.root}>
+                    <CardContent className={classes.content}>
+                      <Typography
+                        variant='subtitle1'
+                        color='textSecondary'>
+                        {_currentTimer}
+                      </Typography>
+                    </CardContent>
+                    <Button
+                      className={classes.cover}
+                      variant='contained'
+                      color='primary'
+                      value={_currentTimer}
+                      onClick={startTimer(_currentTimer)}>
+                      Start Timer
+                    </Button>
+                  </Card>
+                </Grid>
+                {/* <Grid item xs={3}>
+                  <RunTimer time={_currentTimer} />
+                </Grid> */}
               </>
             );
           })
@@ -135,18 +155,15 @@ const ShowAllTimers = (props) => {
 };
 
 const RunTimer = (props) => {
-  const classes = useStyles();
+  const classes = rightChildStyles();
   const [tick, setTick] = useState(0);
   const [minutes, setMinutes] = useState(0);
-  const [hours, setHour] = useState(0);
-
+  console.log(props.time);
   useEffect(() => {
     setTimeout(() => {
       if (tick === 59) {
-        if (minutes === 59) {
-          setTick(0);
-          setMinutes(0);
-          setHour((hours) => hours + 1);
+        if (minutes === props.time) {
+          //do Nothing
         } else {
           setTick(0);
           setMinutes((minutes) => minutes + 1);
