@@ -56,10 +56,11 @@ const rightChildStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
     maxWidth: 200,
+    marginLeft: "40%",
   },
 }));
 
-const AddCustomTimer = () => {
+const TimerWithClickEvent = () => {
   const classes = useStyles();
   const [timers, setTimers] = useState([]);
   const [currentTimer, setCurrentTimer] = useState("");
@@ -125,6 +126,13 @@ const ShowAllTimers = (props) => {
                         {_currentTimer}
                       </Typography>
                     </CardContent>
+                    <Button
+                      className={classes.cover}
+                      variant='contained'
+                      color='primary'
+                      value={_currentTimer}>
+                      Start Timer
+                    </Button>
                   </Card>
                 </Grid>
                 <Grid item xs={3}>
@@ -144,6 +152,7 @@ const RunTimer = (props) => {
   const [minutes, setMinutes] = useState(props.time - 1);
   const [icon, setIcon] = useState("fas fa-hourglass rotate");
 
+  console.log(props.time);
   useEffect(() => {
     setTimeout(() => {
       if (minutes === 0 && tick === 0) {
@@ -177,4 +186,4 @@ const RunTimer = (props) => {
     </>
   );
 };
-export default AddCustomTimer;
+export default TimerWithClickEvent;

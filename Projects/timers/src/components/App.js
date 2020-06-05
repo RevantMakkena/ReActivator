@@ -2,8 +2,8 @@ import React from "react";
 
 function App() {
   return (
-    <div className='App'>
-      <h4>Welcome to Timer App</h4>
+    <div className='App' style={{marginTop: "10%"}}>
+      <i class='fas fa-stopwatch-20' style={{fontSize: "200px"}}></i>
     </div>
   );
 }

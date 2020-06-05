@@ -10,6 +10,7 @@ import AutoRunningTimer from "./components/AutoRunningTimer";
 import App from "./components/App";
 import AddCustomTimer from "./components/AddCustomTimer";
 import TimerWithProps from "./components/TimerWithProps";
+import TimerWithClickEvent from "./components/TimerWithClickEvent";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -35,6 +36,7 @@ export default function LabTabs() {
             <Tab label='running-timer' value='running-timer' />
             <Tab label='custom-timer' value='custom-timer' />
             <Tab label='timer-with-input' value='timer-with-input' />
+            <Tab label='timer-with-click' value='timer-with-click' />
           </TabList>
         </AppBar>
         <TabPanel value='home'>
@@ -48,6 +50,9 @@ export default function LabTabs() {
         </TabPanel>
         <TabPanel value='timer-with-input'>
           <TimerWithProps />
+        </TabPanel>
+        <TabPanel value='timer-with-click'>
+          <TimerWithClickEvent />
         </TabPanel>
       </TabContext>
     </div>
