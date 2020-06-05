@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function LabTabs() {
   const classes = useStyles();
-  const [value, setValue] = React.useState("1");
+  const [value, setValue] = React.useState("home");
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -30,9 +30,7 @@ export default function LabTabs() {
     <div className={classes.root}>
       <TabContext value={value}>
         <AppBar position='static'>
-          <TabList
-            onChange={handleChange}
-            aria-label='simple tabs example'>
+          <TabList onChange={handleChange}>
             <Tab label='home' value='home' />
             <Tab label='running-timer' value='running-timer' />
             <Tab label='custom-timer' value='custom-timer' />

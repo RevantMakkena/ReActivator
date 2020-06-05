@@ -1,6 +1,29 @@
 import React, {useState, useEffect} from "react";
+import "./App.css";
+import {
+  Card,
+  CardContent,
+  CardActions,
+  Button,
+  makeStyles,
+  Typography,
+} from "@material-ui/core";
+
+const useStyles = makeStyles({
+  root: {
+    maxWidth: 345,
+  },
+  media: {
+    height: 100,
+  },
+  contentLeft: {
+    marginLeft: "35%",
+    fontSize: "22px",
+  },
+});
 
 const AutoRunningTimer = () => {
+  const classes = useStyles();
   const [tick, setTick] = useState(0);
   const [minutes, setMinutes] = useState(0);
   const [hours, setHour] = useState(0);
@@ -24,18 +47,21 @@ const AutoRunningTimer = () => {
 
   return (
     <>
-      <div className='row'>
-        <div className='card border-primary mb-3'>
-          <div className='card-header'>
+      <Card className={classes.root}>
+        <CardContent className={classes.media}>
+          <Typography className={classes.contentLeft}>
             <i className='fas fa-hourglass rotate'></i>
-          </div>
-          <div className='card-body text-primary'>
-            <p className='card-text'>
-              {hours} : {minutes} : {tick}
-            </p>
-          </div>
-        </div>
-      </div>
+          </Typography>
+        </CardContent>
+        <CardActions>
+          <Button
+            size='small'
+            color='primary'
+            className={classes.contentLeft}>
+            {hours} : {minutes} : {tick}
+          </Button>
+        </CardActions>
+      </Card>
     </>
   );
 };
