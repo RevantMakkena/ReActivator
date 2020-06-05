@@ -35,7 +35,6 @@ export default function LabTabs() {
             <Tab label='home' value='home' />
             <Tab label='running-timer' value='running-timer' />
             <Tab label='custom-timer' value='custom-timer' />
-            <Tab label='timer-with-input' value='timer-with-input' />
             <Tab label='timer-with-click' value='timer-with-click' />
           </TabList>
         </AppBar>
@@ -47,9 +46,6 @@ export default function LabTabs() {
         </TabPanel>
         <TabPanel value='custom-timer'>
           <AddCustomTimer />
-        </TabPanel>
-        <TabPanel value='timer-with-input'>
-          <TimerWithProps />
         </TabPanel>
         <TabPanel value='timer-with-click'>
           <TimerWithClickEvent />
