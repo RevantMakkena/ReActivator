@@ -1,15 +1,10 @@
 import React from "react";
-import AutoRunningTimer from "./components/AutoRunningTimer";
-
-import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import AddCustomTimer from "./components/AddCustomTimer";
 
 function App() {
   return (
     <div className='App'>
-      {/* <AutoRunningTimer /> */}
-      <AddCustomTimer />
+      <h4>Welcome to Timer App</h4>
     </div>
   );
 }

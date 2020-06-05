@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 
 const TimerWithProps = (props) => {
   const [tick, setTick] = useState(0);
@@ -8,7 +8,7 @@ const TimerWithProps = (props) => {
     setTimeout(() => {
       setTick((tick) => tick + 1);
     }, 1000);
-  }, [ticks]);
+  }, [tick]);
   return (
     <div>
       {props.time ? (
@@ -32,3 +32,5 @@ const TimerWithProps = (props) => {
     </div>
   );
 };
+
+export default TimerWithProps;
