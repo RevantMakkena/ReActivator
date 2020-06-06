@@ -62,10 +62,8 @@ const rightChildStyles = makeStyles((theme) => ({
 
 const TimerWithClickEvent = () => {
   const classes = useStyles();
-  const [timers, setTimers] = useState([]);
   const [currentTimer, setCurrentTimer] = useState("");
 
-  useEffect(() => {}, [timers]);
   const updateCurrentTimer = (e) => {
     setCurrentTimer(e.target.value);
   };
@@ -74,8 +72,6 @@ const TimerWithClickEvent = () => {
     if (currentTimer.length == 0 || !parseInt(currentTimer)) {
       return alert("Input should be a number");
     }
-    setTimers((_timers) => [..._timers, currentTimer]);
-    setCurrentTimer("");
   };
 
   return (
@@ -93,17 +89,9 @@ const TimerWithClickEvent = () => {
             />
           </Typography>
         </CardContent>
-        <CardActions className={classes.contentLeft}>
-          <Button
-            variant='contained'
-            color='primary'
-            onClick={updateTimers}>
-            Add Timer Interval
-          </Button>
-        </CardActions>
       </Card>
       <Grid container style={{marginTop: "2%"}}>
-        <ShowAllTimers currentTimers={timers} />
+        <ShowAllTimers currentTimer={currentTimer} />
       </Grid>
     </div>
   );
@@ -111,37 +99,33 @@ const TimerWithClickEvent = () => {
 
 const ShowAllTimers = (props) => {
   const classes = useChildStyles();
+  const [showTimer, setShowTimer] = useState(false);
+  function runTimer(e) {
+    setShowTimer(true);
+  }
+  useEffect(() => {}, [props.currentTimer]);
   return (
     <>
-      {props.currentTimers
-        ? props.currentTimers.map((_currentTimer) => {
-            return (
-              <>
-                <Grid item xs={3}>
-                  <Card className={classes.root}>
-                    <CardContent className={classes.content}>
-                      <Typography
-                        variant='subtitle1'
-                        color='textSecondary'>
-                        {_currentTimer}
-                      </Typography>
-                    </CardContent>
-                    <Button
-                      className={classes.cover}
-                      variant='contained'
-                      color='primary'
-                      value={_currentTimer}>
-                      Start Timer
-                    </Button>
-                  </Card>
-                </Grid>
-                <Grid item xs={3}>
-                  <RunTimer time={_currentTimer} />
-                </Grid>
-              </>
-            );
-          })
-        : ""}
+      <Grid item xs={3}>
+        <Card className={classes.root}>
+          <CardContent className={classes.content}>
+            <Typography variant='subtitle1' color='textSecondary'>
+              {props.currentTimer}
+            </Typography>
+          </CardContent>
+          <Button
+            className={classes.cover}
+            variant='contained'
+            color='primary'
+            value={props.currentTimer}
+            onClick={runTimer}>
+            Start Timer
+          </Button>
+        </Card>
+      </Grid>
+      <Grid item xs={3}>
+        {showTimer ? <RunTimer time={props.currentTimer} /> : ""}
+      </Grid>
     </>
   );
 };
@@ -151,6 +135,7 @@ const RunTimer = (props) => {
   const [tick, setTick] = useState(59);
   const [minutes, setMinutes] = useState(props.time - 1);
   const [icon, setIcon] = useState("fas fa-hourglass rotate");
+  useEffect(() => {}, [props.time]);
 
   console.log(props.time);
   useEffect(() => {

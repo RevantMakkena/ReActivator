@@ -9,7 +9,6 @@ import {Link} from "react-router-dom";
 import AutoRunningTimer from "./components/AutoRunningTimer";
 import App from "./components/App";
 import AddCustomTimer from "./components/AddCustomTimer";
-import TimerWithProps from "./components/TimerWithProps";
 import TimerWithClickEvent from "./components/TimerWithClickEvent";
 
 const useStyles = makeStyles((theme) => ({
