@@ -11,16 +11,24 @@ const AddNotes = () => {
   const [input, setInput] = useState("");
 
   useEffect(() => {}, [notes]);
-  let noteCount = 1;
 
   const updateInput = (e) => {
     setInput(e.target.value);
   };
 
+  const didUserPressEnter = (e) => {
+    if (e.key === "Enter") {
+      updateNotes();
+    }
+  };
+
   const updateNotes = () => {
+    debugger;
     if (input.length === 0) return alert("Please enter notes");
-    setNotes((_notes) => [..._notes, {id: noteCount, note: input}]);
-    noteCount = noteCount + 1;
+    setNotes((_notes) => [
+      ..._notes,
+      {id: notes.length + 1, note: input},
+    ]);
     setInput("");
   };
 
@@ -36,6 +44,7 @@ const AddNotes = () => {
           label='Notes'
           value={input}
           onChange={updateInput}
+          onKeyDown={didUserPressEnter}
         />
       </div>
       <div className='row'>
