@@ -137,7 +137,6 @@ const RunTimer = (props) => {
   const [icon, setIcon] = useState("fas fa-hourglass rotate");
   useEffect(() => {}, [props.time]);
 
-  console.log(props.time);
   useEffect(() => {
     setTimeout(() => {
       if (minutes === 0 && tick === 0) {
@@ -172,3 +171,5 @@ const RunTimer = (props) => {
   );
 };
 export default TimerWithClickEvent;
+
+//Need to work on re-render RunTimer when Start Timer btn is called
