@@ -23,7 +23,6 @@ const AddNotes = () => {
   };
 
   const updateNotes = () => {
-    debugger;
     if (input.length === 0) return alert("Please enter notes");
     setNotes((_notes) => [
       ..._notes,
@@ -78,7 +77,12 @@ const NoteComponent = (props) => {
             return (
               <>
                 <Grid container>
-                  <Grid sm={9}>
+                  <Grid sm={1}>
+                    <i
+                      className='fas fa-clipboard'
+                      style={{fontSize: "45px"}}></i>
+                  </Grid>
+                  <Grid sm={8}>
                     <SnackbarContent
                       message={_currentNote.note}
                       style={{
