@@ -11,7 +11,9 @@ import {UserDataContext} from "./UserDataContext";
 
 const Step3 = (props) => {
   const classes = useStyles();
-  const [pag3, setPag3] = useContext(UserDataContext);
+  const [pag1, setPag1, pag2, setPag2, pag3, setPag3] = useContext(
+    UserDataContext
+  );
 
   const onFieldChange = (e) => {
     if (e.target.name === "address")
@@ -25,13 +27,13 @@ const Step3 = (props) => {
       setPag3({
         address: pag3.address,
         state: pag3.state,
-        city: pag3.city,
+        city: e.target.value,
         zip: pag3.zip,
       });
     else if (e.target.name === "state")
       setPag3({
         address: pag3.address,
-        state: pag3.state,
+        state: e.target.value,
         city: pag3.city,
         zip: pag3.zip,
       });

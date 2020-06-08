@@ -11,7 +11,9 @@ import {UserDataContext} from "./UserDataContext";
 
 const Step2 = (props) => {
   const classes = useStyles();
-  const [pag2, setPag2] = useContext(UserDataContext);
+  const [pag1, setPag1, pag2, setPag2, pag3, setPag3] = useContext(
+    UserDataContext
+  );
   const onFieldChange = (e) => {
     if (e.target.name === "email")
       setPag2({

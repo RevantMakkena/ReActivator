@@ -10,7 +10,9 @@ import useStyles from "../styles";
 import {UserDataContext} from "./UserDataContext";
 
 const Step1 = (props) => {
-  const [pag1, setPag1] = useContext(UserDataContext);
+  const [pag1, setPag1, pag2, setPag2, pag3, setPag3] = useContext(
+    UserDataContext
+  );
   const classes = useStyles();
   const onFieldChange = (e) => {
     if (e.target.name === "userName")
