@@ -1,3 +1,3 @@
-# Projects/Forms/Components/MultiStepWithContext
+# Project ideas with React
 
-Use context provider value has multiple functions, and all of them has to be imported into child components even though we don't need all.
+## Bootstrapped with npx create-react-app
