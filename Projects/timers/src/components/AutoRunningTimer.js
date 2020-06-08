@@ -1,4 +1,7 @@
-import React, {useState, useEffect} from "react";
+import React, {
+  useState,
+  useEffect,
+} from "../../node_modules/@types/react";
 import "./App.css";
 import {
   Card,
@@ -7,7 +10,7 @@ import {
   Button,
   makeStyles,
   Typography,
-} from "@material-ui/core";
+} from "../../node_modules/@material-ui/core";
 
 const useStyles = makeStyles({
   root: {

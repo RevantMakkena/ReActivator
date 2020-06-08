@@ -1,4 +1,7 @@
-import React, {useState, useEffect} from "react";
+import React, {
+  useState,
+  useEffect,
+} from "../../node_modules/@types/react";
 import {
   SnackbarContent,
   TextField,
@@ -9,7 +12,7 @@ import {
   Typography,
   CardActions,
   Grid,
-} from "@material-ui/core";
+} from "../../node_modules/@material-ui/core";
 
 const useStyles = makeStyles({
   root: {
