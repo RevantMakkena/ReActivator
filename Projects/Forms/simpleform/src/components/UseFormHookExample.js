@@ -8,17 +8,7 @@ import {
 } from "@material-ui/core";
 import {ToastContainer, toast} from "react-toastify";
 import "./App.css";
-
-const useStyles = makeStyles((theme) => ({
-  fields: {
-    marginTop: "20px",
-    width: "100%",
-  },
-  submitFields: {
-    marginTop: "10px",
-    width: "50%",
-  },
-}));
+import useStyles from "./styles";
 
 const UseFormHookEx = () => {
   const classes = useStyles();
@@ -34,6 +24,7 @@ const UseFormHookEx = () => {
     <>
       <ToastContainer />
       <Container maxWidth='sm'>
+        <h4 style={{color: "Green"}}>Use Form Example</h4>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div>
             <TextField

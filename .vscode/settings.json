@@ -6,5 +6,6 @@
   "editor.tabCompletion": "on",
   "editor.fontFamily": "FiraCode-Retina",
   "editor.fontWeight": "400", // Regular
-  "editor.fontLigatures": "'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'zero', 'onum'"
+  "editor.fontLigatures": "'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'zero', 'onum'",
+  "git.ignoreLimitWarning": true
 }
