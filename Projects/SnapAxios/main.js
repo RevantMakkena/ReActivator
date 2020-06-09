@@ -23,7 +23,9 @@ function getTodos() {
   //     .catch((err) => console.log(err));
 
   //3rd way
-  axios("https://jsonplaceholder.typicode.com/todos?_limit=10")
+  axios("https://jsonplaceholder.typicode.com/todos?_limit=10", {
+    timeout: 5,
+  })
     .then((res) => showOutput(res))
     .catch((err) => console.log(err));
 }
@@ -43,10 +45,14 @@ function addTodo() {
   //     .catch((err) => console.log(err));
 
   axios
-    .post("https://jsonplaceholder.typicode.com/todos", {
-      title: "New to do 2",
-      completed: false,
-    })
+    .post(
+      "https://jsonplaceholder.typicode.com/todos",
+      {
+        title: "New to do 2",
+        completed: false,
+      },
+      {timeout: 5}
+    )
     .then((res) => showOutput(res))
     .catch((err) => console.log(err));
 }
@@ -186,6 +192,12 @@ axios.interceptors.request.use(
 );
 
 // AXIOS INSTANCES
+const Axios = axios.create({
+  //other custom settings
+  baseURL: "https://jsonplaceholder.typicode.com",
+  timeout: 5,
+});
+Axios.get("/comments?_limit=1").then((res) => showOutput(res));
 
 // Show output in browser
 function showOutput(res) {
