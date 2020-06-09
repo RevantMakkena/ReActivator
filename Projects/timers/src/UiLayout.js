@@ -1,15 +1,16 @@
-import React from "../node_modules/@types/react";
-import {makeStyles} from "../node_modules/@material-ui/core/styles";
-import AppBar from "../node_modules/@material-ui/core/AppBar";
-import Tab from "../node_modules/@material-ui/core/Tab";
-import TabContext from "../node_modules/@material-ui/lab/TabContext";
-import TabList from "../node_modules/@material-ui/lab/TabList";
-import TabPanel from "../node_modules/@material-ui/lab/TabPanel";
-import {Link} from "../node_modules/react-router-dom";
+import React from "react";
+import {makeStyles} from "@material-ui/core/styles";
+import AppBar from "@material-ui/core/AppBar";
+import Tab from "@material-ui/core/Tab";
+import TabContext from "@material-ui/lab/TabContext";
+import TabList from "@material-ui/lab/TabList";
+import TabPanel from "@material-ui/lab/TabPanel";
+import {Link} from "react-router-dom";
 import AutoRunningTimer from "./components/AutoRunningTimer";
 import App from "./components/App";
 import AddCustomTimer from "./components/AddCustomTimer";
 import TimerWithClickEvent from "./components/TimerWithClickEvent";
+import {Test} from "./components/test";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -35,6 +36,7 @@ export default function LabTabs() {
             <Tab label='running-timer' value='running-timer' />
             <Tab label='custom-timer' value='custom-timer' />
             <Tab label='timer-with-click' value='timer-with-click' />
+            <Tab label='test' value='test' />
           </TabList>
         </AppBar>
         <TabPanel value='home'>
@@ -48,6 +50,9 @@ export default function LabTabs() {
         </TabPanel>
         <TabPanel value='timer-with-click'>
           <TimerWithClickEvent />
+        </TabPanel>
+        <TabPanel value='test'>
+          <Test />
         </TabPanel>
       </TabContext>
     </div>

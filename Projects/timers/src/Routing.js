@@ -1,4 +1,4 @@
-import React from "../node_modules/@types/react";
+import React from "react";
 import CenteredTabs from "./UiLayout";
 
 const Routing = () => {

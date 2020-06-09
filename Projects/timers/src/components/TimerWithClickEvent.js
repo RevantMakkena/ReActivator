@@ -1,7 +1,4 @@
-import React, {
-  useState,
-  useEffect,
-} from "../../node_modules/@types/react";
+import React, {useState, useEffect} from "react";
 import {
   SnackbarContent,
   TextField,
@@ -12,7 +9,7 @@ import {
   Typography,
   CardActions,
   Grid,
-} from "../../node_modules/@material-ui/core";
+} from "@material-ui/core";
 
 const useStyles = makeStyles({
   root: {
@@ -94,16 +91,21 @@ const TimerWithClickEvent = () => {
         </CardContent>
       </Card>
       <Grid container style={{marginTop: "2%"}}>
-        <ShowAllTimers currentTimer={currentTimer} />
+        <ShowAllTimers
+          currentTimer={currentTimer}
+          timerShow={false}
+        />
       </Grid>
     </div>
   );
 };
 
 const ShowAllTimers = (props) => {
+  debugger;
   const classes = useChildStyles();
-  const [showTimer, setShowTimer] = useState(false);
+  const [showTimer, setShowTimer] = useState(props.timerShow);
   function runTimer(e) {
+    debugger;
     setShowTimer(true);
   }
   useEffect(() => {}, [props.currentTimer]);
@@ -127,7 +129,11 @@ const ShowAllTimers = (props) => {
         </Card>
       </Grid>
       <Grid item xs={3}>
-        {showTimer ? <RunTimer time={props.currentTimer} /> : ""}
+        {props.timerShow ? (
+          <RunTimer time={props.currentTimer} />
+        ) : (
+          ""
+        )}
       </Grid>
     </>
   );

@@ -4,6 +4,14 @@ import {Paper} from "@material-ui/core";
 export const Posts = ({posts, loading}) => {
   if (loading) return <div>Loading</div>;
 
+  const getRandomColor = () => {
+    var letters = "0123456789ABCDEF";
+    var color = "#";
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  };
   return (
     <>
       {posts.map((post) => {
@@ -16,6 +24,10 @@ export const Posts = ({posts, loading}) => {
               marginTop: "10px",
               border: "0.5px solid green",
             }}>
+            <i
+              class='fas fa-caret-square-right'
+              style={{color: getRandomColor()}}></i>
+            {"   "}
             {post.title}
           </Paper>
         );
