@@ -1,30 +1,31 @@
 import React from "react";
+import Pagination from "@material-ui/lab/Pagination";
 
-export const Pagination = ({postsPerPage, totalPosts, paginate}) => {
+export const PaginationComponent = ({
+  postsPerPage,
+  totalPosts,
+  paginate,
+}) => {
   const pageNumbers = [];
   for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
     pageNumbers.push(i);
   }
+
+  const handleChangePage = (event) => {
+    debugger;
+    paginate(event.target.innerText);
+  };
+
   return (
-    <div>
-      <nav>
-        <ul className='pagination'>
-          {pageNumbers.map((pageNumber) => {
-            return (
-              <li key={pageNumber} className='page-item'>
-                <a
-                  href='#'
-                  onClick={() => {
-                    paginate(pageNumber);
-                  }}
-                  className='page-link'>
-                  {pageNumber}
-                </a>
-              </li>
-            );
-          })}
-        </ul>
-      </nav>
-    </div>
+    <>
+      <Pagination
+        style={{marginTop: "10px", marginLeft: "25%"}}
+        count={pageNumbers.length}
+        onClick={handleChangePage}
+        variant='outlined'
+        color='secondary'
+        shape='rounded'
+      />
+    </>
   );
 };
