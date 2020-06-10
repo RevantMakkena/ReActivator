@@ -15,6 +15,7 @@ import {
 } from "@material-ui/core";
 import {ToastContainer, toast} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import {BarLoader} from "react-spinners";
 
 const useStyles = makeStyles({
   root: {
@@ -46,6 +47,7 @@ const StyledTableRow = withStyles((theme) => ({
 const AppEntry = () => {
   const classes = useStyles();
   const [posts, setPosts] = useState([]);
+  const [deleteLoading, setDeleteLoading] = useState("none");
   useEffect(() => {
     const fetchPosts = async () => {
       const {data, status} = await getApiPosts();
@@ -60,8 +62,16 @@ const AppEntry = () => {
   };
   const deletePost = (id) => {
     const delPost = async () => {
+      setDeleteLoading("block");
       const res = await deleteApiPost(id);
-      debugger;
+      setDeleteLoading("none");
+      if (res.status === 200) {
+        const modifiedPosts = posts.filter((post, index) => {
+          return post.id != id;
+        });
+        setPosts(modifiedPosts);
+      }
+      apiToast("Post is deleted successfully!!", res.status);
     };
     delPost();
   };
@@ -80,6 +90,9 @@ const AppEntry = () => {
 
   return posts ? (
     <>
+      <div style={{display: deleteLoading}}>
+        <BarLoader height={5} width={2000} />
+      </div>
       <ToastContainer />
       <TableContainer component={Paper}>
         <Table

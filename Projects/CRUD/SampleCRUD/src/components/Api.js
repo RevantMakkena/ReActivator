@@ -11,6 +11,8 @@ export function getApiPosts() {
 export function deleteApiPost(id) {
   return axios
     .delete(`${Url}/${id}`)
-    .then((res) => res.data)
+    .then((res) => {
+      return res;
+    })
     .catch((err) => console.log(err));
 }

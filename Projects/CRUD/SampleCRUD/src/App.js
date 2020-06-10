@@ -7,7 +7,7 @@ import AppEntry from "./components/AppEntry";
 function App() {
   return (
     <div className='App'>
-      <h4 style={{color: "green"}}>Sample CRUD Operations</h4>
+      {/* <h4 style={{color: "green"}}>Sample CRUD Operations</h4> */}
       <AppEntry />
     </div>
   );
