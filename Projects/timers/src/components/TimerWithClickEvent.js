@@ -63,14 +63,14 @@ const rightChildStyles = makeStyles((theme) => ({
 const TimerWithClickEvent = () => {
   const classes = useStyles();
   const [currentTimer, setCurrentTimer] = useState("");
+  const [show, setShow] = useState(false);
 
   const updateCurrentTimer = (e) => {
     setCurrentTimer(e.target.value);
-  };
-
-  const updateTimers = () => {
-    if (currentTimer.length == 0 || !parseInt(currentTimer)) {
-      return alert("Input should be a number");
+    if (parseInt(e.target.value)) {
+      setShow(true);
+    } else {
+      setShow(false);
     }
   };
 
@@ -91,10 +91,7 @@ const TimerWithClickEvent = () => {
         </CardContent>
       </Card>
       <Grid container style={{marginTop: "2%"}}>
-        <ShowAllTimers
-          currentTimer={currentTimer}
-          timerShow={false}
-        />
+        {show ? <ShowAllTimers currentTimer={currentTimer} /> : ""}
       </Grid>
     </div>
   );
@@ -103,10 +100,9 @@ const TimerWithClickEvent = () => {
 const ShowAllTimers = (props) => {
   debugger;
   const classes = useChildStyles();
-  const [showTimer, setShowTimer] = useState(props.timerShow);
+  const [showTimer, setShowTimer] = useState(false);
   function runTimer(e) {
-    debugger;
-    setShowTimer(true);
+    setShowTimer(showTimer === true ? false : true);
   }
   useEffect(() => {}, [props.currentTimer]);
   return (
@@ -129,11 +125,7 @@ const ShowAllTimers = (props) => {
         </Card>
       </Grid>
       <Grid item xs={3}>
-        {props.timerShow ? (
-          <RunTimer time={props.currentTimer} />
-        ) : (
-          ""
-        )}
+        {showTimer ? <RunTimer time={props.currentTimer} /> : ""}
       </Grid>
     </>
   );
