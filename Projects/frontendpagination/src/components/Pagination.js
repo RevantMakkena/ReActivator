@@ -1,5 +1,5 @@
-import React from "react";
-import Pagination from "@material-ui/lab/Pagination";
+import React from "../../node_modules/@types/react";
+import Pagination from "../../node_modules/@material-ui/lab/Pagination";
 
 export const PaginationComponent = ({
   postsPerPage,

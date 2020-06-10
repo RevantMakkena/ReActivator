@@ -1,5 +1,5 @@
-import React from "react";
-import {Paper} from "@material-ui/core";
+import React from "../../node_modules/@types/react";
+import {Paper} from "../../node_modules/@material-ui/core";
 
 export const Posts = ({posts, loading}) => {
   if (loading) return <div>Loading</div>;
