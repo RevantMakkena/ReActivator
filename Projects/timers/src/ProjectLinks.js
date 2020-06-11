@@ -1,6 +1,6 @@
-import React from "../node_modules/@types/react";
-import {Link} from "../node_modules/react-router-dom";
-import {Paper} from "../node_modules/@material-ui/core";
+import React from "react";
+import {Link} from "react-router-dom";
+import {Paper} from "@material-ui/core";
 
 const ProjectLinks = () => {
   return (

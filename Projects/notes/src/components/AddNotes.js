@@ -1,13 +1,10 @@
-import React, {
-  useState,
-  useEffect,
-} from "../../node_modules/@types/react";
+import React, {useState, useEffect} from "react";
 import {
   SnackbarContent,
   TextField,
   Button,
   Grid,
-} from "../../node_modules/@material-ui/core";
+} from "@material-ui/core";
 
 const AddNotes = () => {
   const [notes, setNotes] = useState([]);

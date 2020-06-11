@@ -1,9 +1,6 @@
-import React, {
-  useState,
-  useEffect,
-} from "../../node_modules/@types/react";
-import {Grid} from "../../node_modules/@material-ui/core";
-import axios from "../../node_modules/axios";
+import React, {useState, useEffect} from "react";
+import {Grid} from "@material-ui/core";
+import axios from "axios";
 import {Posts} from "./Posts";
 import {PaginationComponent} from "./Pagination";
 
