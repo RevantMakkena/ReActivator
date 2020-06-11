@@ -41,11 +41,13 @@ const AppEntry = () => {
       setDeleteLoading("block");
       const res = await deleteApiPost(id);
       setDeleteLoading("none");
-      if (res.status === 200) {
+      if (res && res.status === 200) {
         const modifiedPosts = posts.filter((post, index) => {
           return post.id !== id;
         });
         setPosts(modifiedPosts);
+      } else {
+        apiToast(404);
       }
       apiToast("Post is deleted successfully!!", res.status);
     };
