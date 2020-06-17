@@ -1,30 +1,33 @@
 import React from "react";
-import {useContext} from "react";
-import {createContext, useState, useMemo} from "react";
-import {} from "react";
+import {createContext} from "react";
+import {useState} from "react";
+import {useMemo, useEffect, useContext} from "react";
 
-const noop = () => {};
-const AuthContext = createContext({
-  user: null,
-  login: noop,
-  logout: noop,
-});
+export const AuthDataContext = createContext(null);
+const initialAuthData = {};
 
 export const AuthDataProvider = (props) => {
-  const [user, setUser] = useState(null);
+  const [authData, setAuthData] = useState(initialAuthData);
 
-  const auth = useMemo(
+  useEffect(() => {
+    const currentAuthData = {};
+    if (currentAuthData) {
+      setAuthData(currentAuthData);
+    }
+  }, []);
+
+  const login = (newAuthData) => setAuthData(newAuthData);
+  const logout = () => setAuthData(initialAuthData);
+
+  const authDataVal = useMemo(
     () => ({
-      user,
-      login: (user) => setUser(user),
-      logout: () => setUser(null),
+      ...authData,
+      login,
+      logout,
     }),
-    [user]
+    [authData]
   );
-
-  return <AuthContext.Provider value={auth} {...props} />;
+  return <AuthDataContext.Provider value={authDataVal} {...props} />;
 };
 
-export default AuthDataProvider;
-
-export const useAuthentication = () => useContext(AuthContext);
+export const useAuthDataContext = () => useContext(AuthDataContext);

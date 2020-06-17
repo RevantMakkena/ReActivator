@@ -2,12 +2,21 @@ import React from "react";
 import {Switch, Route, Redirect} from "react-router-dom";
 import {Home} from "./Home";
 import {Details} from "./Details";
+import SignInForm from "./SignIn";
+import {useAuthDataContext} from "./AuthDataProvider";
+
+const PrivateRoute = ({component, ...options}) => {
+  const {user} = useAuthDataContext();
+  const finalComponent = user ? component : SignInForm;
+
+  return <Route {...options} component={finalComponent} />;
+};
 
 export const Router = () => {
   return (
     <Switch>
-      <Route path='/details' component={Details} />
-      <Route path='/' component={Home} />
+      <PrivateRoute path='/home' component={Home} />
+      <PrivateRoute path='/details' component={Details} />
       <Redirect path='/' to='/home' />
     </Switch>
   );

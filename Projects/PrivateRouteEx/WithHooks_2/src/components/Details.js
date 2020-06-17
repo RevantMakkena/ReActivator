@@ -1,22 +1,14 @@
 import React from "react";
-import {useAuthentication} from "./AuthDataProvider";
+import {useAuthDataContext} from "./AuthDataProvider";
+import {Link} from "react-router-dom";
 
 export const Details = () => {
-  const auth = useAuthentication();
+  const {user, onLogout} = useAuthDataContext();
 
-  const setLogin = () => {
-    auth.login({firstname: "revanth"});
-  };
-  if (auth.user) {
-    return <h4>{auth.user.firstname}</h4>;
+  const setLogin = () => {};
+  if (user) {
+    return <h4>{user.firstname}</h4>;
   } else {
-    return (
-      <h4>
-        Not Authorized
-        <button type='button' onClick={setLogin}>
-          Set Logi
-        </button>
-      </h4>
-    );
+    return <Link to='/'>Please log in</Link>;
   }
 };
