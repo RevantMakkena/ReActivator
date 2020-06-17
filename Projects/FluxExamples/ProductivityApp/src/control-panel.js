@@ -20,7 +20,6 @@ const fontSizePreferenceUpdateAction = (name) => {
 document
   .getElementById("userNameInput")
   .addEventListener("input", ({target}) => {
-    console.log("Dispatching....", target.value);
     controlPanelDispatcher.dispatcher(
       updateUserNameAction(target.value)
     );
@@ -35,6 +34,7 @@ document.forms.fontSizeForm.fontSize.forEach((element) => {
 });
 class UserPrefStore extends Store {
   getInitialState() {
+    debugger;
     return localStorage[`preferences`]
       ? JSON.parse(localStorage[`preferences`])
       : {
@@ -57,6 +57,7 @@ class UserPrefStore extends Store {
   }
 
   getUserPreferences() {
+    debugger;
     return this.__state;
   }
 }
@@ -64,7 +65,6 @@ class UserPrefStore extends Store {
 const userPrefStore = new UserPrefStore(controlPanelDispatcher);
 
 userPrefStore.addListener((state) => {
-  console.info(`the current state is`, state);
   render(state);
   localStorage[`preferences`] = JSON.stringify(state);
 });
