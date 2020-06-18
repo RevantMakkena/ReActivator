@@ -1,0 +1,23 @@
+import React, {useEffect, useReducer, useRef} from "react";
+const useForceRerender = () =>
+  useReducer((state) => !state, false)[1];
+
+const UseReducerComponent = () => {
+  const forceRerender = useForceRerender();
+  const refCount = useRef(0);
+
+  useEffect(() => {
+    refCount.current += 1;
+  });
+
+  return (
+    <>
+      <p>Count: {refCount.current}</p>
+      <p>
+        <button onClick={forceRerender}>Increment Counter</button>
+      </p>
+    </>
+  );
+};
+
+export default UseReducerComponent;

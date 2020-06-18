@@ -1,10 +1,10 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useLayoutEffect} from "react";
 import "../App.css";
 
-export const UseEffectComponent = () => {
+export const UseLayoutEffectComponent = () => {
   const [value, setValue] = useState(0);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (value === 0) {
       setValue(Math.floor(Math.random() * 10000));
     }
@@ -14,7 +14,7 @@ export const UseEffectComponent = () => {
     <>
       <div className='adjustHeight'>
         <div className='container' onClick={() => setValue(0)}>
-          value: {value}
+          <label>value</label> : <label>{value}</label>
         </div>
       </div>
     </>
