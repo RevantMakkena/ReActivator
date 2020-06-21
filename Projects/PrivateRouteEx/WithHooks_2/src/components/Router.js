@@ -6,6 +6,7 @@ import SignInForm from "./SignIn";
 import {useAuthDataContext} from "./AuthDataProvider";
 
 const PrivateRoute = ({component, ...options}) => {
+  debugger;
   const {user} = useAuthDataContext();
   const finalComponent = user ? component : SignInForm;
 

@@ -3,7 +3,7 @@ import {useAuthentication} from "./AuthDataProvider";
 
 export const Details = () => {
   const auth = useAuthentication();
-
+  console.log(auth);
   const setLogin = () => {
     auth.login({firstname: "revanth"});
   };
