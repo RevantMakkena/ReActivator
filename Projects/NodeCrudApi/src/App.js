@@ -1,13 +1,13 @@
 import React from "react";
 import logo from "./logo.svg";
+import {Container} from "@material-ui/core";
 import "./App.css";
-import {GetUsers} from "./components/Getusers";
 
 function App() {
   return (
-    <div className='App'>
-      <GetUsers />
-    </div>
+    <Container fixed>
+      <div className='AppContent'>CRUD using Node</div>
+    </Container>
   );
 }
 

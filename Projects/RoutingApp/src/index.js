@@ -2,11 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import * as serviceWorker from "./serviceWorker";
-import {RouterComponent} from "./RouterComponent";
+import {Router} from "./Router";
 
 ReactDOM.render(
   <React.StrictMode>
-    <RouterComponent />
+    <Router />
   </React.StrictMode>,
   document.getElementById("root")
 );
