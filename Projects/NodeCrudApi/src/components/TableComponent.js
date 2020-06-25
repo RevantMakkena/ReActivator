@@ -49,6 +49,8 @@ export const TableComponent = ({
   handleChangeRowsPerPage,
   page,
   rowsPerPage,
+  editUser,
+  deleteUser,
 }) => {
   const classes = useStyles();
   return (
@@ -72,7 +74,7 @@ export const TableComponent = ({
               )
             : users
           ).map((row) => (
-            <StyledTableRow key={row.id}>
+            <StyledTableRow key={row.Id}>
               <StyledTableCell component='th' scope='row'>
                 {row.FirstName}
               </StyledTableCell>
@@ -82,12 +84,18 @@ export const TableComponent = ({
               <StyledTableCell>{row.Email}</StyledTableCell>
               <StyledTableCell>{row.Company}</StyledTableCell>
               <StyledTableCell align='right'>
-                <Button variant='outlined' color='primary'>
+                <Button
+                  variant='outlined'
+                  color='primary'
+                  onClick={() => editUser(row.Id)}>
                   Edit
                 </Button>
               </StyledTableCell>
               <StyledTableCell align='right'>
-                <Button variant='outlined' color='secondary'>
+                <Button
+                  variant='outlined'
+                  color='secondary'
+                  onClick={() => deleteUser(row.Id)}>
                   Delete
                 </Button>
               </StyledTableCell>

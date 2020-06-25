@@ -3,6 +3,7 @@ import {BrowserRouter, Route, Link, Switch} from "react-router-dom";
 import "./App.css";
 import App from "./App";
 import {GetUsers} from "./components/Getusers";
+import {EditUser} from "./components/EditUser";
 
 export const RouterComponent = () => {
   return (
@@ -15,7 +16,8 @@ export const RouterComponent = () => {
         </div>
         <Switch>
           <Route path='/users' component={GetUsers} />
-          <Route path='/' component={App} />
+          <Route path='/edit/:id' component={EditUser} />
+          <Route path='/' exact component={App} />
         </Switch>
       </BrowserRouter>
     </>

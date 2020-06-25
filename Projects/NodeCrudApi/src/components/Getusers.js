@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 
-import {getAll} from "./UsersApi.js";
+import {getAll, deleteUserApi, getUser} from "./UsersApi.js";
 import {TableComponent} from "./TableComponent";
 
 export const GetUsers = () => {
@@ -23,7 +23,22 @@ export const GetUsers = () => {
       setUsers(res);
     };
     fetchUsers();
-  }, [users]);
+  }, []);
+
+  const editUser = async (id) => {
+    const user = await getUser(id);
+    console.log(user)
+    
+  };
+
+  const deleteUser = (id) => {
+    const isUserDeleted = await deleteUserApi(id);
+
+    if (isUserDeleted === 200) {
+      const getRefreshedUsers = await getAll();
+      setUsers(getRefreshedUsers);
+    }
+  };
 
   return (
     <>
@@ -34,6 +49,8 @@ export const GetUsers = () => {
           handleChangeRowsPerPage={handleChangeRowsPerPage}
           page={page}
           rowsPerPage={rowsPerPage}
+          editUser={editUser}
+          deleteUser={deleteUser}
         />
       ) : (
         ""
