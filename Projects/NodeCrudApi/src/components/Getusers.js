@@ -1,25 +1,25 @@
 import React, {useState, useEffect} from "react";
 
-import {getAll} from "./BooksApi.js";
+import {getAll} from "./UsersApi.js";
 
-export const GetBooks = () => {
-  const [books, setBooks] = useState([]);
+export const GetUsers = () => {
+  const [users, setUsers] = useState([]);
   useEffect(() => {
-    const fetchBooks = async () => {
+    const fetchUsers = async () => {
       const res = await getAll();
-      setBooks(res);
+      setUsers(res);
     };
-    fetchBooks();
-  }, [books]);
+    fetchUsers();
+  }, [users]);
 
   return (
     <>
-      {books
-        ? books.map((book) => {
+      {users
+        ? users.map((user) => {
             return (
               <table>
                 <tbody>
-                  <tr>{book.id}</tr>
+                  <tr>{JSON.stringify(user)}</tr>
                 </tbody>
               </table>
             );

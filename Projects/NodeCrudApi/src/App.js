@@ -1,12 +1,12 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import {GetBooks} from "./components/GetBooks";
+import {GetUsers} from "./components/Getusers";
 
 function App() {
   return (
     <div className='App'>
-      <GetBooks />
+      <GetUsers />
     </div>
   );
 }
