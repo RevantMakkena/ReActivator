@@ -28,3 +28,10 @@ export const editUserApi = async (id) => {
     .then((res) => res.data)
     .catch((err) => console.log(err));
 };
+
+export const putUserApi = async (user) => {
+  return await axios
+    .put(`${url}`, {user: user})
+    .then((res) => res.status)
+    .catch((err) => console.log(err));
+};

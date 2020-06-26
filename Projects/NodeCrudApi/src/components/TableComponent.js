@@ -13,6 +13,7 @@ import {
   TableFooter,
 } from "@material-ui/core";
 import React from "react";
+import {Link} from "react-router-dom";
 
 const useStyles = makeStyles({
   root: {
@@ -49,7 +50,6 @@ export const TableComponent = ({
   handleChangeRowsPerPage,
   page,
   rowsPerPage,
-  editUser,
   deleteUser,
 }) => {
   const classes = useStyles();
@@ -84,11 +84,8 @@ export const TableComponent = ({
               <StyledTableCell>{row.Email}</StyledTableCell>
               <StyledTableCell>{row.Company}</StyledTableCell>
               <StyledTableCell align='right'>
-                <Button
-                  variant='outlined'
-                  color='primary'
-                  onClick={() => editUser(row.Id)}>
-                  Edit
+                <Button variant='outlined' color='primary'>
+                  <Link to={`edit/${row.Id}`}>Edit</Link>
                 </Button>
               </StyledTableCell>
               <StyledTableCell align='right'>

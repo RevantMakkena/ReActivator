@@ -25,13 +25,7 @@ export const GetUsers = () => {
     fetchUsers();
   }, []);
 
-  const editUser = async (id) => {
-    const user = await getUser(id);
-    console.log(user)
-    
-  };
-
-  const deleteUser = (id) => {
+  const deleteUser = async (id) => {
     const isUserDeleted = await deleteUserApi(id);
 
     if (isUserDeleted === 200) {
@@ -49,7 +43,6 @@ export const GetUsers = () => {
           handleChangeRowsPerPage={handleChangeRowsPerPage}
           page={page}
           rowsPerPage={rowsPerPage}
-          editUser={editUser}
           deleteUser={deleteUser}
         />
       ) : (
