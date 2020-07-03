@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 
 import {getAll, deleteUserApi, getUser} from "./UsersApi.js";
 import {TableComponent} from "./TableComponent";
+import {ToastContainer, toast} from "react-toastify";
 
 export const GetUsers = () => {
   const [users, setUsers] = useState([]);
