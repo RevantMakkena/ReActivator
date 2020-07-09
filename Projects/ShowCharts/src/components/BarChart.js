@@ -23,7 +23,7 @@ export const BarChartEx = () => {
           title: {
             display: true,
             text: "Average Rainfall per month",
-            fontSize: 20,
+            fontSize: 10,
           },
           legend: {
             display: true,
