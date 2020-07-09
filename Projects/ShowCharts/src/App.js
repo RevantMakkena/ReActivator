@@ -4,7 +4,7 @@ import {BrowserRouter, Route, Switch, Link} from "react-router-dom";
 import {BarChartEx} from "./components/BarChart";
 import DoughnutChart from "./components/Doughnut";
 import BubbleChart from "./components/Bubble";
-import {HorizontalBar} from "react-chartjs-2";
+import HorizontalBarChart from "./components/HorizontalBar";
 import LineChart from "./components/Line";
 import PieChart from "./components/Pie";
 import PolarChart from "./components/Polar";
@@ -39,7 +39,7 @@ function App() {
         <Route path='/Bubble' component={BubbleChart}></Route>
         <Route
           path='/HorizantalBar'
-          component={HorizontalBar}></Route>
+          component={HorizontalBarChart}></Route>
         <Route path='/Line' component={LineChart}></Route>
         <Route path='/Pie' component={PieChart}></Route>
         <Route path='/Polar' component={PolarChart}></Route>
