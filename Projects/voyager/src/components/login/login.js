@@ -21,7 +21,6 @@ const Login = () => {
   const loginInfo = useFormik({
     initialValues,
     onSubmit,
-
     validationSchema,
   });
 
@@ -34,9 +33,7 @@ const Login = () => {
             name='email'
             type='text'
             id='email'
-            onChange={loginInfo.handleChange}
-            value={loginInfo.values.email}
-            onBlur={loginInfo.handleBlur}
+            {...loginInfo.getFieldProps("email")}
           />
 
           {loginInfo.errors.email && loginInfo.touched.email ? (
@@ -50,9 +47,7 @@ const Login = () => {
             name='password'
             type='password'
             id='password'
-            onChange={loginInfo.handleChange}
-            value={loginInfo.values.password}
-            onBlur={loginInfo.handleBlur}
+            {...loginInfo.getFieldProps("password")}
           />
 
           {loginInfo.errors.password && loginInfo.touched.password ? (
