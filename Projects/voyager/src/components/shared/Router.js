@@ -9,15 +9,7 @@ import {
 import {useAuthDataContext} from "./AuthDataProvider";
 import Login from "../login/login";
 import {Register} from "../register/register";
-import {EmployeeList} from "../employees/EmployeeList";
-
-const PrivateRoute = ({component, ...options}) => {
-  debugger;
-  const {user} = useAuthDataContext();
-  const finalComponent = user ? component : Login;
-
-  return <Route {...options} component={finalComponent} />;
-};
+import {EmployeeHome} from "../employees/EmployeeHome";
 
 export const Router = () => {
   return (
@@ -27,7 +19,7 @@ export const Router = () => {
       <Switch>
         <Route path='/login' component={Login} />
         <Route path='/register' component={Register} />
-        <PrivateRoute path='/employees' component={EmployeeList} />
+        <PrivateRoute path='/employees' component={EmployeeHome} />
         <Redirect path='/' to='/login' />
       </Switch>
     </BrowserRouter>

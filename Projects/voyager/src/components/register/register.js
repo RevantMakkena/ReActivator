@@ -28,22 +28,22 @@ export const Register = () => {
       onSubmit={onSubmit}
       validationSchema={validationSchema}>
       <Form>
-        <div className='form-control'>
+        <div>
           <label htmlFor='name'>Name</label>
           <Field type='text' name='name' id='name' />
           <ErrorMessage component={TextError} name='name' />
         </div>
-        <div className='form-control'>
+        <div>
           <label htmlFor='email'>Email</label>
           <Field type='text' name='email' id='email' />
           <ErrorMessage component={TextError} name='email' />
         </div>
-        <div className='form-control'>
+        <div>
           <label htmlFor='password'>Password</label>
           <Field type='text' name='password' id='password' />
           <ErrorMessage component={TextError} name='password' />
         </div>
-        <div className='form-control'>
+        <div>
           <label htmlFor='confirmPassword'>Confirm Password</label>
           <Field
             type='text'

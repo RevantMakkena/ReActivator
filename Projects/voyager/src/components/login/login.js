@@ -11,7 +11,7 @@ const Login = () => {
   };
 
   const onSubmit = (vals) => {
-    console.log(vals.email);
+    debugger;
   };
 
   const validationSchema = Yup.object({
@@ -25,13 +25,13 @@ const Login = () => {
       onSubmit={onSubmit}
       validationSchema={validationSchema}>
       <Form>
-        <div className='form-control'>
+        <div>
           <label htmlFor='email'>Email</label>
           <Field name='email' type='text' id='email' />
           <ErrorMessage component={TextError} name='email' />
         </div>
 
-        <div className='form-control'>
+        <div>
           <label htmlFor='password'>Password</label>
           <Field name='password' type='password' id='password' />
           <ErrorMessage component={TextError} name='password' />

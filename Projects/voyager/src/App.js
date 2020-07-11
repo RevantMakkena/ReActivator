@@ -1,14 +1,9 @@
 import React from "react";
 import "./App.css";
-import {AuthDataProvider} from "./components/shared/AuthDataProvider";
-import {Router} from "./components/shared/Router";
+import {AuthDataApp} from "./components/shared/AuthDataProvider";
 
 function App() {
-  return (
-    <AuthDataProvider>
-      <Router />
-    </AuthDataProvider>
-  );
+  return <AuthDataApp />;
 }
 
 export default App;

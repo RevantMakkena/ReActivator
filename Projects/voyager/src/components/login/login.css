@@ -7,7 +7,8 @@ label {
   font-weight: bold;
   display: flex;
   margin-bottom: 5px;
-  margin-left: 30%;
+  /* text-align: left; */
+  /* margin-left: 30%; */
   margin-right: 30%;
   margin-top: 20px;
 }
@@ -29,9 +30,9 @@ textarea {
 }
 
 button {
-  margin-left: 36%;
-  margin-right: 30%;
+  margin-left: 10% !important;
   width: 150px;
+  margin-top: 30px !important;
 }
 .form-control {
   border: none;
