@@ -41,8 +41,10 @@ export const Register = () => {
             id='name'
             onChange={registerFields.handleChange}
             value={registerFields.values.name}
+            onBlur={registerFields.handleBlur}
           />
-          {registerFields.errors.name ? (
+          {registerFields.errors.name &&
+          registerFields.touched.name ? (
             <div className='error'>{registerFields.errors.name}</div>
           ) : null}
         </div>
@@ -54,8 +56,10 @@ export const Register = () => {
             id='email'
             onChange={registerFields.handleChange}
             value={registerFields.values.email}
+            onBlur={registerFields.handleBlur}
           />
-          {registerFields.errors.email ? (
+          {registerFields.errors.email &&
+          registerFields.touched.email ? (
             <div className='error'>{registerFields.errors.email}</div>
           ) : null}
         </div>
@@ -67,8 +71,10 @@ export const Register = () => {
             id='password'
             onChange={registerFields.handleChange}
             value={registerFields.values.password}
+            onBlur={registerFields.handleBlur}
           />
-          {registerFields.errors.password ? (
+          {registerFields.errors.password &&
+          registerFields.touched.password ? (
             <div className='error'>
               {registerFields.errors.password}
             </div>
@@ -82,8 +88,10 @@ export const Register = () => {
             id='confirmPassword'
             onChange={registerFields.handleChange}
             value={registerFields.values.confirmPassword}
+            onBlur={registerFields.handleBlur}
           />
-          {registerFields.errors.confirmPassword ? (
+          {registerFields.errors.confirmPassword &&
+          registerFields.touched.confirmPassword ? (
             <div className='error'>
               {registerFields.errors.confirmPassword}
             </div>

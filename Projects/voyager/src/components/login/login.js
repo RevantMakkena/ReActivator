@@ -1,7 +1,7 @@
 import React from "react";
 import "./login.css";
-// import {Formik, Form, Field, ErrorMessage, withFormik} from "formik";
-import {useFormik, Formik} from "formik";
+import {useFormik} from "formik";
+import * as Yup from "yup";
 
 const Login = () => {
   const initialValues = {
@@ -13,20 +13,18 @@ const Login = () => {
     console.log(vals.email);
   };
 
-  const validate = (vals) => {
-    let errors = {};
-    if (!vals.email) errors.email = "Email is required";
-
-    if (!vals.password) errors.password = "Email is required";
-    return errors;
-  };
+  const validationSchema = Yup.object({
+    email: Yup.string().required("Required!"),
+    password: Yup.string().required("Required"),
+  });
 
   const loginInfo = useFormik({
     initialValues,
     onSubmit,
-    validate,
+
+    validationSchema,
   });
-  console.log(loginInfo.errors);
+
   return (
     <div>
       <form onSubmit={loginInfo.handleSubmit}>
@@ -38,10 +36,11 @@ const Login = () => {
             id='email'
             onChange={loginInfo.handleChange}
             value={loginInfo.values.email}
+            onBlur={loginInfo.handleBlur}
           />
 
-          {loginInfo.errors.email ? (
-            <div className='error'>Email is Required</div>
+          {loginInfo.errors.email && loginInfo.touched.email ? (
+            <div className='error'>{loginInfo.errors.email}</div>
           ) : null}
         </div>
 
@@ -53,10 +52,11 @@ const Login = () => {
             id='password'
             onChange={loginInfo.handleChange}
             value={loginInfo.values.password}
+            onBlur={loginInfo.handleBlur}
           />
 
-          {loginInfo.errors.password ? (
-            <div className='error'>Password is Required</div>
+          {loginInfo.errors.password && loginInfo.touched.password ? (
+            <div className='error'>{loginInfo.errors.password}</div>
           ) : null}
         </div>
 
