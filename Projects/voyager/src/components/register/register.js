@@ -1,5 +1,7 @@
 import React from "react";
-import {useFormik} from "formik";
+import {Formik, Form, Field, ErrorMessage} from "formik";
+import * as Yup from "yup";
+import TextError from "../shared/TextError";
 
 export const Register = () => {
   const initialValues = {
@@ -13,94 +15,50 @@ export const Register = () => {
     console.log(vals);
   };
 
-  const validate = (vals) => {
-    let errors = {};
-    if (!vals.name) errors.name = "Name is Required";
-    if (!vals.email) errors.email = "Email is Required";
-    if (!vals.password) errors.password = "Password is Required";
-    if (!vals.confirmPassword)
-      errors.confirmPassword = "Confirm Password is Required";
-
-    return errors;
-  };
-
-  const registerFields = useFormik({
-    initialValues,
-    onSubmit,
-    validate,
+  const validationSchema = Yup.object({
+    name: Yup.string().required("Required"),
+    email: Yup.string().required("Required"),
+    password: Yup.string().required("Required"),
+    confirmPassword: Yup.string().required("Required"),
   });
 
   return (
-    <div>
-      <form onSubmit={registerFields.handleSubmit}>
+    <Formik
+      initialValues={initialValues}
+      onSubmit={onSubmit}
+      validationSchema={validationSchema}>
+      <Form>
         <div className='form-control'>
           <label htmlFor='name'>Name</label>
-          <input
-            type='text'
-            name='name'
-            id='name'
-            onChange={registerFields.handleChange}
-            value={registerFields.values.name}
-            onBlur={registerFields.handleBlur}
-          />
-          {registerFields.errors.name &&
-          registerFields.touched.name ? (
-            <div className='error'>{registerFields.errors.name}</div>
-          ) : null}
+          <Field type='text' name='name' id='name' />
+          <ErrorMessage component={TextError} name='name' />
         </div>
         <div className='form-control'>
           <label htmlFor='email'>Email</label>
-          <input
-            type='text'
-            name='email'
-            id='email'
-            onChange={registerFields.handleChange}
-            value={registerFields.values.email}
-            onBlur={registerFields.handleBlur}
-          />
-          {registerFields.errors.email &&
-          registerFields.touched.email ? (
-            <div className='error'>{registerFields.errors.email}</div>
-          ) : null}
+          <Field type='text' name='email' id='email' />
+          <ErrorMessage component={TextError} name='email' />
         </div>
         <div className='form-control'>
           <label htmlFor='password'>Password</label>
-          <input
-            type='text'
-            name='password'
-            id='password'
-            onChange={registerFields.handleChange}
-            value={registerFields.values.password}
-            onBlur={registerFields.handleBlur}
-          />
-          {registerFields.errors.password &&
-          registerFields.touched.password ? (
-            <div className='error'>
-              {registerFields.errors.password}
-            </div>
-          ) : null}
+          <Field type='text' name='password' id='password' />
+          <ErrorMessage component={TextError} name='password' />
         </div>
         <div className='form-control'>
           <label htmlFor='confirmPassword'>Confirm Password</label>
-          <input
+          <Field
             type='text'
             name='confirmPassword'
             id='confirmPassword'
-            onChange={registerFields.handleChange}
-            value={registerFields.values.confirmPassword}
-            onBlur={registerFields.handleBlur}
           />
-          {registerFields.errors.confirmPassword &&
-          registerFields.touched.confirmPassword ? (
-            <div className='error'>
-              {registerFields.errors.confirmPassword}
-            </div>
-          ) : null}
+          <ErrorMessage
+            component={TextError}
+            name='confirmPassword'
+          />
         </div>
         <button className='btn btn-primary' type='submit'>
           Register
         </button>
-      </form>
-    </div>
+      </Form>
+    </Formik>
   );
 };

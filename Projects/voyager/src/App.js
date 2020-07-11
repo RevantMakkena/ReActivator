@@ -1,20 +1,13 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
-import {BrowserRouter, Route, Switch, Link} from "react-router-dom";
-import Login from "./components/login/login";
-import {Register} from "./components/register/register";
+import {AuthDataProvider} from "./components/shared/AuthDataProvider";
+import {Router} from "./components/shared/Router";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Link to='/register'>Register</Link> {" | "}
-      <Link to='/login'>Login</Link>
-      <Switch>
-        <Route path='/login' component={Login} />
-        <Route path='/register' component={Register} />
-      </Switch>
-    </BrowserRouter>
+    <AuthDataProvider>
+      <Router />
+    </AuthDataProvider>
   );
 }
 

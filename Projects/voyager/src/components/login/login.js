@@ -38,7 +38,7 @@ const Login = () => {
         </div>
 
         <button className='btn btn-primary' type='submit'>
-          Submit
+          Login
         </button>
       </Form>
     </Formik>
