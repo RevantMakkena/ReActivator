@@ -28,22 +28,22 @@ export const Register = () => {
       onSubmit={onSubmit}
       validationSchema={validationSchema}>
       <Form>
-        <div>
+        <div className='formDiv'>
           <label htmlFor='name'>Name</label>
           <Field type='text' name='name' id='name' />
           <ErrorMessage component={TextError} name='name' />
         </div>
-        <div>
+        <div className='formDiv'>
           <label htmlFor='email'>Email</label>
           <Field type='text' name='email' id='email' />
           <ErrorMessage component={TextError} name='email' />
         </div>
-        <div>
+        <div className='formDiv'>
           <label htmlFor='password'>Password</label>
           <Field type='text' name='password' id='password' />
           <ErrorMessage component={TextError} name='password' />
         </div>
-        <div>
+        <div className='formDiv'>
           <label htmlFor='confirmPassword'>Confirm Password</label>
           <Field
             type='text'
@@ -55,9 +55,11 @@ export const Register = () => {
             name='confirmPassword'
           />
         </div>
-        <button className='btn btn-primary' type='submit'>
-          Register
-        </button>
+        <div className='formDiv'>
+          <button className='btn btn-primary' type='submit'>
+            Register
+          </button>
+        </div>
       </Form>
     </Formik>
   );

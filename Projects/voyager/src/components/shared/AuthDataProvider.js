@@ -59,9 +59,11 @@ export function AuthDataApp() {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
-    debugger;
-    const user = JSON.parse(localStorage.getItem("user") || null);
-    const token = JSON.parse(localStorage.getItem("token") || null);
+    const user =
+      localStorage.getItem("user") != "undefined"
+        ? JSON.parse(localStorage.getItem("user"))
+        : null;
+    const token = JSON.parse(localStorage.getItem("token")) || null;
 
     if (user && token) {
       dispatch({
@@ -82,17 +84,22 @@ export function AuthDataApp() {
       }}>
       <LoginHeader />
       <div className='App'>
-        {!state.isAuthenticated ? "" : <EmployeeHome />}
+        {!state.isAuthenticated ? (
+          <BrowserRouter>
+            <div>
+              <Link to='/register'>Register</Link> {" | "}
+              <Link to='/login'>Login</Link>
+            </div>
+            <Switch>
+              <Route path='/login' component={Login} />
+              <Route path='/register' component={Register} />
+              <Redirect path='/' to='/login' />
+            </Switch>
+          </BrowserRouter>
+        ) : (
+          <EmployeeHome />
+        )}
       </div>
-      <BrowserRouter>
-        <Link to='/register'>Register</Link> {" | "}
-        <Link to='/login'>Login</Link>
-        <Switch>
-          <Route path='/login' component={Login} />
-          <Route path='/register' component={Register} />
-          <Redirect path='/' to='/login' />
-        </Switch>
-      </BrowserRouter>
     </AuthContext.Provider>
   );
 }
