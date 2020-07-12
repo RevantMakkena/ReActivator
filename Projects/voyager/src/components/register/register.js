@@ -2,6 +2,7 @@ import React from "react";
 import {Formik, Form, Field, ErrorMessage} from "formik";
 import * as Yup from "yup";
 import TextError from "../shared/TextError";
+import "../login/login.css";
 
 export const Register = () => {
   const initialValues = {

@@ -10,7 +10,6 @@ import {
 import {LoginHeader} from "./LoginHeader";
 import Login from "../login/login";
 import {Register} from "../register/register";
-import {EmployeeHome} from "../employees/EmployeeHome";
 import {
   BrowserRouter,
   Link,
@@ -18,6 +17,7 @@ import {
   Switch,
   Redirect,
 } from "react-router-dom";
+import {HomePage} from "../employees/HomePage";
 
 export const AuthContext = createContext();
 const initialState = {
@@ -97,7 +97,7 @@ export function AuthDataApp() {
             </Switch>
           </BrowserRouter>
         ) : (
-          <EmployeeHome />
+          <HomePage />
         )}
       </div>
     </AuthContext.Provider>

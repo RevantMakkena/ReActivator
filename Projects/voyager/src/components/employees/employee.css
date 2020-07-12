@@ -1,0 +1,22 @@
+.row {
+  margin-top: 20px;
+}
+
+.displayIcons {
+  /* font-size: 75px;
+  margin-left: 30%; */
+  color: orange;
+}
+
+.card-text {
+  color: white;
+}
+
+.card {
+  background-color: darkslategray !important;
+  height: 200px;
+}
+
+button {
+  margin-left: 10px !important;
+}

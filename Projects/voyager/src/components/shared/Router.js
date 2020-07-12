@@ -13,6 +13,36 @@ import {EmployeeHome} from "../employees/EmployeeHome";
 
 export const Router = () => {
   return (
+     <div>
+      <div className='row'>
+        <div className='col-sm-6'>
+          <div className='card'>
+            <div className='card-body'>
+              <h5 className='card-title'>
+                <i className='fas fa-binoculars displayIcons'></i>
+              </h5>
+              <p className='card-text'>List of employees</p>
+            </div>
+            <div className='card-footer'>
+              <button className='btn btn-primary'>View</button>
+            </div>
+          </div>
+        </div>
+        <div className='col-sm-6'>
+          <div className='card'>
+            <div className='card-body'>
+              <h5 className='card-title'>
+                <i className='fas fa-user-plus displayIcons'></i>
+              </h5>
+              <p className='card-text'>Add New Employee</p>
+            </div>
+            <div className='card-footer'>
+              <button className='btn btn-primary'>Add</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <BrowserRouter>
       <Link to='/register'>Register</Link> {" | "}
       <Link to='/login'>Login</Link>
