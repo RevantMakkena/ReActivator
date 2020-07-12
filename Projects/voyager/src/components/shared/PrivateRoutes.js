@@ -7,7 +7,7 @@ export const PrivateRoutes = () => {
   return (
     <BrowserRouter>
       <Link to='/employees'>View Employees</Link>
-      {" | "}
+      {"  |  "}
       <Link to='/add'>Add Employee</Link>
       <Switch>
         <Route path='/employees' component={EmployeeList} />

@@ -6,9 +6,5 @@ import "./employee.css";
 
 export const EmployeeHome = (props) => {
   const {state, dispatch} = AuthDataContext();
-  return (
-    <>
-      <PrivateRoutes />
-    </>
-  );
+  return <PrivateRoutes />;
 };

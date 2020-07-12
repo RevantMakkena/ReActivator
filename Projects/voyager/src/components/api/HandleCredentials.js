@@ -5,9 +5,12 @@ export const LogUser = async (userName, password) => {
   return await axios
     .post(`${URL}login`, {email: userName, password})
     .then((res) => {
+      debugger;
       if (res.status === 200) {
-        debugger;
         return res.data;
       } else return null;
+    })
+    .catch((err) => {
+      return null;
     });
 };

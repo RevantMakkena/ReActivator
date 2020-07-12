@@ -9,7 +9,7 @@ export const LoginHeader = () => {
       type: "LOGOUT",
     });
   };
-  console.log(JSON.stringify(state));
+
   return (
     <>
       <nav className='navbar navbar-dark bg-dark navbar-static-top'>

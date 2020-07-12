@@ -5,7 +5,7 @@ import {EmployeeList} from "./EmployeeList";
 
 export const HomePage = () => {
   return (
-    <div>
+    <div className='row' style={{width: "100%"}}>
       <EmployeeHome />
     </div>
   );
