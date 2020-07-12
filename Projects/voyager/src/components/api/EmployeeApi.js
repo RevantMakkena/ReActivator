@@ -14,3 +14,14 @@ export const GetAllEmployees = async (email, token) => {
     })
     .catch((err) => null);
 };
+
+export const GetEmployeeById = async (id, email, token) => {
+  return await Axios.get(`${EMP_URL}${id}`, {
+    headers: {
+      email: email,
+      token: token,
+    },
+  })
+    .then((res) => res.data)
+    .catch((err) => null);
+};
