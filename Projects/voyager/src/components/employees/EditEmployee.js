@@ -43,7 +43,7 @@ export const EditEmployee = (props) => {
     }
 
     if (id) getById();
-  }, [id]);
+  }, []);
 
   const onSubmit = {};
   const validationSchema = Yup.object({
@@ -102,6 +102,9 @@ export const EditEmployee = (props) => {
               <Field name='state' type='text' id='state' />
             </div>
           </div>
+        </div>
+        <div>
+          <button className='btn btn-primary'>Update</button>
         </div>
       </Form>
     </Formik>
