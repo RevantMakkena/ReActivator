@@ -9,6 +9,7 @@ import {BarLoader} from "react-spinners";
 import {useState} from "react";
 import {css} from "@emotion/core";
 import {ToastContainer, toast} from "react-toastify";
+import {getErrorMessageByStatus} from "../../DemystStatusCodes";
 
 const override = css`
   display: block;
@@ -30,14 +31,14 @@ const Login = () => {
     setLoad(true);
     const response = await LogUser(vals.email, vals.password);
 
-    if (response) {
+    if (response.status === 200) {
       dispatch({
         type: "LOGIN",
-        payload: response,
+        payload: response.data,
       });
     } else {
       setLoad(false);
-      toast.error("Network is down!!", {
+      toast.error(getErrorMessageByStatus(response.status), {
         position: toast.POSITION.TOP_RIGHT,
       });
     }

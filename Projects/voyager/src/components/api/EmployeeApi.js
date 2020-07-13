@@ -9,6 +9,7 @@ export const GetAllEmployees = async (email, token) => {
     },
   })
     .then((res) => {
+      console.log(res);
       if (res) return res.data;
       else return null;
     })
