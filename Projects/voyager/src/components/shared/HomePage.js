@@ -1,7 +1,7 @@
 import React from "react";
-import {EmployeeHome} from "./EmployeeHome";
+import {EmployeeHome} from "../employees/EmployeeHome";
 import {useState} from "react";
-import {EmployeeList} from "./EmployeeList";
+import {EmployeeList} from "../employees/EmployeeList";
 
 export const HomePage = () => {
   return (

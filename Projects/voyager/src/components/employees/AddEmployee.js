@@ -6,7 +6,7 @@ import {useEffect, useState} from "react";
 import {AuthDataContext} from "../shared/AuthDataProvider";
 import {Link} from "react-router-dom";
 
-export const EditEmployee = ({initialValues}) => {
+export const AddEmployee = ({initialValues}) => {
   const {state, dispatch} = AuthDataContext();
 
   const onSubmit = {};

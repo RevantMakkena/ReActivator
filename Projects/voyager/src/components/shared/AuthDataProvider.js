@@ -17,7 +17,7 @@ import {
   Switch,
   Redirect,
 } from "react-router-dom";
-import {HomePage} from "../employees/HomePage";
+import {HomePage} from "./HomePage";
 
 export const AuthContext = createContext();
 const initialState = {

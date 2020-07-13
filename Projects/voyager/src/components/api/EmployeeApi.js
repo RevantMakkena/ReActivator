@@ -25,3 +25,14 @@ export const GetEmployeeById = async (id, email, token) => {
     .then((res) => res.data)
     .catch((err) => null);
 };
+
+export const DeleteEmployeeById = async (id, email, token) => {
+  return await Axios.delete(`${EMP_URL}${id}`, {
+    headers: {
+      email: email,
+      token: token,
+    },
+  })
+    .then((res) => res.status)
+    .catch((err) => null);
+};

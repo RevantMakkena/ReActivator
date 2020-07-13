@@ -2,10 +2,8 @@ import React from "react";
 import {Paper} from "@material-ui/core";
 import {Link} from "react-router-dom";
 
-export const Employee = ({employees}) => {
-  function deleteEmployee(e) {
-    console.log(e.target.id);
-  }
+export const Employee = ({employees, deleteEmp}) => {
+  function deleteEmployee(e) {}
 
   return (
     <>
@@ -31,7 +29,7 @@ export const Employee = ({employees}) => {
                 <button
                   className='btn btn-danger'
                   id={emp.id}
-                  onClick={deleteEmployee}>
+                  onClick={() => deleteEmp(emp.id)}>
                   Delete
                 </button>{" "}
               </div>

@@ -15,7 +15,6 @@ export const Register = () => {
   };
 
   const onSubmit = async (vals) => {
-    console.log(vals);
     const response = await RegisterUser(
       vals.name,
       vals.email,
@@ -59,13 +58,13 @@ export const Register = () => {
           </div>
           <div className='formDiv'>
             <label htmlFor='password'>Password</label>
-            <Field type='text' name='password' id='password' />
+            <Field type='password' name='password' id='password' />
             <ErrorMessage component={TextError} name='password' />
           </div>
           <div className='formDiv'>
             <label htmlFor='confirmPassword'>Confirm Password</label>
             <Field
-              type='text'
+              type='password'
               name='confirmPassword'
               id='confirmPassword'
             />
