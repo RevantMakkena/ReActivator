@@ -1,5 +1,6 @@
 import configureStore from "./store/configureStore";
-import * as actions from "./store/bugs";
+import {bugAdded, bugResolved} from "./store/bugs";
+import {projectAdded} from "./store/projects";
 
 const store = configureStore();
 
@@ -7,6 +8,5 @@ store.subscribe(() =>
   console.log("Store called " + JSON.stringify(store.getState()))
 );
 
-store.dispatch(actions.bugAdded({description: "Hello"}));
-store.dispatch(actions.bugAdded({description: "Hi"}));
-store.dispatch(actions.bugAdded({description: "Hyee"}));
+store.dispatch(projectAdded({description: "Nenu"}));
+store.dispatch(bugAdded({description: "Hello"}));
