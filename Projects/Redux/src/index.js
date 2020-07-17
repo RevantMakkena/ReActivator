@@ -7,6 +7,6 @@ store.subscribe(() =>
   console.log("Store called " + JSON.stringify(store.getState()))
 );
 
-store.dispatch(actions.bugAdded("Hello"));
-store.dispatch(actions.bugAdded("Hi"));
-store.dispatch(actions.bugAdded("Hyee"));
+store.dispatch(actions.bugAdded({description: "Hello"}));
+store.dispatch(actions.bugAdded({description: "Hi"}));
+store.dispatch(actions.bugAdded({description: "Hyee"}));
