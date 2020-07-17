@@ -8,7 +8,7 @@ import {AddEmployee} from "./AddEmployee";
 export const AddEditEntry = (props) => {
   const {state, dispatch} = AuthDataContext();
   const id = props.match.params.id;
-  console.log(id);
+
   const [initialValues, setInitialValues] = useState({
     fName: "",
     lName: "",
@@ -49,6 +49,6 @@ export const AddEditEntry = (props) => {
   return id && initialValues.fName !== "" ? (
     <EditEmployee initialValues={initialValues} />
   ) : (
-    <AddEmployee initialValues={initialValues} />
+    <AddEmployee />
   );
 };

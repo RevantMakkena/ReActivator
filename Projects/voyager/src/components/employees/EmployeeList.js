@@ -11,12 +11,20 @@ import {PaginationFooter} from "../shared/PaginationFooter";
 import {Employee} from "./Employee";
 import {Paper} from "@material-ui/core";
 import {ToastContainer, toast} from "react-toastify";
+import {PropagateLoader} from "react-spinners";
+import {css} from "@emotion/core";
+
+const override = css`
+  margin-left: 40%;
+  margin-top: 10%;
+`;
 
 export const EmployeeList = () => {
   const {state, dispatch} = AuthDataContext();
   const [emps, setEmps] = useState([]);
   const [empPerPage, setEmpPerPage] = useState(10);
   const [page, setPage] = useState(1);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function fetchData() {
@@ -24,7 +32,7 @@ export const EmployeeList = () => {
         state.user.email,
         state.token
       );
-
+      setLoading(false);
       if (res) setEmps(res);
       else {
         //do Nothing
@@ -60,7 +68,9 @@ export const EmployeeList = () => {
     }
   };
 
-  return emps ? (
+  return loading ? (
+    <PropagateLoader css={override} />
+  ) : emps ? (
     <>
       <ToastContainer />
       <Grid container spacing={3}>

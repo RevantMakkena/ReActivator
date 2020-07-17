@@ -27,6 +27,10 @@ export const GetEmployeeById = async (id, email, token) => {
     .catch((err) => null);
 };
 
+export const SaveNewEmployee = async ({}) => {
+  return await Axios.post();
+};
+
 export const DeleteEmployeeById = async (id, email, token) => {
   return await Axios.delete(`${EMP_URL}${id}`, {
     headers: {
