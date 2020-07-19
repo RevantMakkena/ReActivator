@@ -5,7 +5,6 @@ import MuiAlert from "@material-ui/lab/Alert";
 
 export const Notify = ({type, message}) => {
   const [show, setShow] = useState(true);
-  //{type, message}
   const handleClose = () => {
     setShow(false);
   };
