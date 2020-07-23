@@ -20,7 +20,7 @@ const bugSlice = createSlice({
     },
     bugResolved: (bugs, action) => {
       const index = bugs.findIndex((f) => f.id === action.payload.id);
-      state[index].resolved = true;
+      bugs[index].resolved = true;
     },
   },
 });

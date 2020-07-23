@@ -1,16 +1,5 @@
 import axios from "axios";
-import * as ApiActions from "../apiAction";
-
-const action = {
-  type: "apiCall",
-  payload: {
-    url: "/bugs",
-    method: "get",
-    data: {},
-    onSuccess: "apiSuccess",
-    onError: "apiFailure",
-  },
-};
+import * as ApiActions from "../actions/apiAction";
 
 const api = ({dispatch}) => (next) => async (action) => {
   if (action.type !== ApiActions.API_CALL_BEGAN.type) {
@@ -29,7 +18,10 @@ const api = ({dispatch}) => (next) => async (action) => {
       data,
     });
 
-    dispatch({type: onSuccess, payload: response.data});
+    dispatch(ApiActions.API_CALL_SUCCESS(response.data));
+
+    if (onSuccess)
+      dispatch({type: onSuccess, payload: response.data});
   } catch (error) {
     //General Error
     dispatch(ApiActions.API_CALL_FAILED(error));

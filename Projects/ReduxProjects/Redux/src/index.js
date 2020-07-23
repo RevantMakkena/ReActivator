@@ -5,10 +5,10 @@ import {
   getUnresolvedBugs,
   addBugToUser,
   getBugsByUser,
-} from "./store/bugs";
-import {projectAdded} from "./store/projects";
-import {addUser} from "./store/users";
-import * as ApiActions from "./store/apiAction";
+} from "./store/slices/bugs";
+import {projectAdded} from "./store/slices/projects";
+import {addUser} from "./store/slices/users";
+import * as ApiActions from "./store/actions/apiAction";
 
 const store = configureStore();
 
@@ -36,7 +36,7 @@ store.dispatch(
     url: "/bugs",
     method: "get",
     data: {},
-    onSuccess: ApiActions.API_CALL_SUCCESS.type,
+    onSuccess: "bugsReceived",
     onError: ApiActions.API_CALL_FAILED.type,
   })
 );
