@@ -8,6 +8,7 @@ import {
 } from "./store/bugs";
 import {projectAdded} from "./store/projects";
 import {addUser} from "./store/users";
+import * as ApiActions from "./store/apiAction";
 
 const store = configureStore();
 
@@ -25,7 +26,17 @@ store.dispatch({type: "error", description: {message: "Hello"}});
 
 // console.log(getBugsByUser(1)(store.getState()));
 
-store.dispatch((dispatch, getState) => {
-  //Call API
-  dispatch(bugAdded({description: "in-flight added"}));
-});
+// store.dispatch((dispatch, getState) => {
+//   //Call API
+//   dispatch(bugAdded({description: "in-flight added"}));
+// });
+
+store.dispatch(
+  ApiActions.API_CALL_BEGAN({
+    url: "/bugs",
+    method: "get",
+    data: {},
+    onSuccess: ApiActions.API_CALL_SUCCESS.type,
+    onError: ApiActions.API_CALL_FAILED.type,
+  })
+);

@@ -1,0 +1,4 @@
+module.exports = {
+  CREATE_NOTES: "CREATE_NOTES",
+  DELETE_NOTES: "DELETE_NOTES",
+};
