@@ -5,6 +5,7 @@ import {
   getUnresolvedBugs,
   addBugToUser,
   getBugsByUser,
+  loadBugs,
 } from "./store/slices/bugs";
 import {projectAdded} from "./store/slices/projects";
 import {addUser} from "./store/slices/users";
@@ -16,10 +17,10 @@ const store = configureStore();
 //   console.log("Store called " + JSON.stringify(store.getState()))
 // );
 
-store.dispatch(projectAdded({description: "Ne nu"}));
-store.dispatch(bugAdded({description: "Hello"}));
-store.dispatch(addUser({name: "Revanth"}));
-store.dispatch({type: "error", description: {message: "Hello"}});
+// store.dispatch(projectAdded({description: "Ne nu"}));
+// store.dispatch(bugAdded({description: "Hello"}));
+// store.dispatch(addUser({name: "Revanth"}));
+// store.dispatch({type: "error", description: {message: "Hello"}});
 // store.dispatch(addUser({name: "Makkena"}));
 // store.dispatch(addUser({name: "Kumar"}));
 // store.dispatch(addBugToUser({bugId: 1, userId: 1}));
@@ -31,12 +32,8 @@ store.dispatch({type: "error", description: {message: "Hello"}});
 //   dispatch(bugAdded({description: "in-flight added"}));
 // });
 
-store.dispatch(
-  ApiActions.API_CALL_BEGAN({
-    url: "/bugs",
-    method: "get",
-    data: {},
-    onSuccess: "bugsReceived",
-    onError: ApiActions.API_CALL_FAILED.type,
-  })
-);
+store.dispatch(loadBugs());
+
+setTimeout(() => {
+  store.dispatch(loadBugs());
+}, 2000);
