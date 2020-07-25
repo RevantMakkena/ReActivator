@@ -6,6 +6,7 @@ import {
   addBugToUser,
   getBugsByUser,
   loadBugs,
+  addBug,
 } from "./store/slices/bugs";
 import {projectAdded} from "./store/slices/projects";
 import {addUser} from "./store/slices/users";
@@ -32,8 +33,8 @@ const store = configureStore();
 //   dispatch(bugAdded({description: "in-flight added"}));
 // });
 
-store.dispatch(loadBugs());
+store.dispatch(addBug({description: "xyz"}));
 
-setTimeout(() => {
-  store.dispatch(loadBugs());
-}, 2000);
+// setTimeout(() => {
+//   store.dispatch(loadBugs());
+// }, 2000);

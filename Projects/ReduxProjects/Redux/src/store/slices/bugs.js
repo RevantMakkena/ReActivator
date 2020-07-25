@@ -3,7 +3,6 @@ import {createSelector} from "reselect";
 import {API_CALL_BEGAN, API_CALL_FAILED} from "../actions/apiAction";
 import moment from "moment";
 
-let lastId = 0;
 const bugSlice = createSlice({
   name: "bugs",
   initialState: {
@@ -18,11 +17,7 @@ const bugSlice = createSlice({
       bugs.list[index].userId = userId;
     },
     bugAdded: (bugs, action) => {
-      bugs.list.push({
-        id: ++lastId,
-        description: action.payload.description,
-        resolved: false,
-      });
+      bugs.list.push(action.payload);
     },
     bugResolved: (bugs, action) => {
       const index = bugs.list.findIndex(
@@ -72,6 +67,16 @@ export const loadBugs = () => (dispatch, getState) => {
     })
   );
 };
+
+export const addBug = (bug) =>
+  API_CALL_BEGAN({
+    url: "/bugs",
+    method: "post",
+    data: bug,
+    onStart: bugsRequested.type,
+    onSuccess: bugAdded.type,
+    onError: bugsRequestFailed.type,
+  });
 
 //Memoization
 export const getUnresolvedBugs = createSelector(
