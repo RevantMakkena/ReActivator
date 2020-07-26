@@ -1,22 +1,37 @@
 import React from "react";
 import "./App.css";
 import {TopBar} from "../shared/topbar/TopBar";
-import {useStore, useSelector, useDispatch} from "react-redux";
-import {loginUserAction} from "../../store/slices/LoginSlice";
+import Login from "../login/login";
+import {Register} from "../register/register";
+import {BrowserRouter, Route, Switch, Link} from "react-router-dom";
+import {useSelector, useDispatch} from "react-redux";
+import {Home} from "../home/home";
+import {logoutUserAction} from "../../store/slices/LoginSlice";
 
 const App = () => {
-  // const store = useStore();
-  // console.log(store.getState());
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.loginUser.currentUser);
 
-  // const user = useSelector((state) => state.loginUser.currentUser);
-  // console.log("user" + JSON.stringify(user));
-
-  const disp = useDispatch();
-  disp(loginUserAction());
+  const logUserOut = () => {
+    dispatch(logoutUserAction());
+  };
 
   return (
     <>
-      <TopBar />
+      <TopBar user={user} logout={logUserOut} />
+      {user.name ? (
+        <Home />
+      ) : (
+        <BrowserRouter>
+          <Link to='/login'>Login</Link>
+          {" | "}
+          <Link to='/register'>Register</Link>
+          <Switch>
+            <Route path='/login' component={Login} />
+            <Route path='/register' component={Register} />
+          </Switch>
+        </BrowserRouter>
+      )}
     </>
   );
 };

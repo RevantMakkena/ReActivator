@@ -1,3 +1,9 @@
 .fa-phoenix-framework {
   font-size: x-large;
 }
+
+.user-name {
+  width: 80%;
+  text-align: right;
+  margin-right: 25px;
+}

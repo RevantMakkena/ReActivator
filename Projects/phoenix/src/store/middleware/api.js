@@ -2,7 +2,6 @@ import axios from "axios";
 import * as ApiActions from "../actions/ApiActions";
 
 const api = ({dispatch}) => (next) => async (action) => {
-  if (action === undefined) return;
   if (action.type !== ApiActions.API_CALL_BEGAN.type) {
     return next(action);
   }
@@ -14,6 +13,7 @@ const api = ({dispatch}) => (next) => async (action) => {
     onStart,
     onSuccess,
     onError,
+    headers,
   } = action.payload;
 
   if (onStart) dispatch({type: onStart});
@@ -24,6 +24,7 @@ const api = ({dispatch}) => (next) => async (action) => {
       url,
       method,
       data,
+      headers,
     });
 
     dispatch(ApiActions.API_CALL_SUCCESS(response.data));
