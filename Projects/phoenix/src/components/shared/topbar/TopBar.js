@@ -6,7 +6,7 @@ export const TopBar = () => {
   return (
     <AppBar position='sticky'>
       <Toolbar>
-        <i class='fab fa-phoenix-framework'></i>
+        <i className='fab fa-phoenix-framework'></i>
       </Toolbar>
     </AppBar>
   );
