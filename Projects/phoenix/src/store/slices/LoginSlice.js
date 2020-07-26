@@ -6,23 +6,26 @@ import {
   API_CALL_FAILED,
 } from "../actions/ApiActions";
 
+const initialUser = localStorage.getItem("logInUser")
+  ? JSON.parse(localStorage.getItem("logInUser"))
+  : null;
+
 const usr = createSlice({
   name: "logUser",
   initialState: {
-    currentUser: {},
-    token: "",
-    loggedIn: false,
+    user: initialUser,
   },
   reducers: {
-    loginUser: (user, action) => {
-      user.currentUser = action.payload.user;
-      user.token = action.payload.token;
-      user.loggedIn = true;
+    loginUser: (state, action) => {
+      state.user = action.payload;
+      localStorage.setItem(
+        "logInUser",
+        JSON.stringify(action.payload)
+      );
     },
-    logoutUser: (user, action) => {
-      user.currentUser = {};
-      user.token = "";
-      user.loggedIn = false;
+    logoutUser: (state, action) => {
+      state.user = null;
+      localStorage.removeItem("logInUser");
     },
   },
 });
@@ -35,8 +38,9 @@ export const loginUserAction = (username, password) => (
   dispatch,
   getState
 ) => {
-  const obj = getState().loginUser.currentUser;
-  if (Object.keys(obj).length === 0) {
+  const obj = getState().auth?.user;
+
+  if (obj === null || Object.keys(obj).length === 0) {
     dispatch(
       API_CALL_BEGAN({
         url: UrlActions.loginAPI + "login",
@@ -49,13 +53,13 @@ export const loginUserAction = (username, password) => (
 };
 
 export const logoutUserAction = () => (dispatch, getState) => {
-  const obj = getState().loginUser;
+  const obj = getState().auth;
   if (Object.keys(obj).length !== 0) {
     dispatch(
       API_CALL_BEGAN({
         url: UrlActions.loginAPI + "logout",
         method: "post",
-        headers: {email: obj.currentUser.email, token: obj.token},
+        headers: {email: obj.user.email, token: obj.token},
         onSuccess: logoutUser.type,
       })
     );

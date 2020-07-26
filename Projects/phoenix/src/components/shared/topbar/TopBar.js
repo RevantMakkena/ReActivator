@@ -7,7 +7,7 @@ export const TopBar = ({user, logout}) => {
     <AppBar position='sticky'>
       <Toolbar>
         <i className='fab fa-phoenix-framework'></i>
-        {user.name ? (
+        {user && user.name ? (
           <>
             <span className='user-name'> Hi, {user.name}</span>
             <button className='btn btn-danger' onClick={logout}>

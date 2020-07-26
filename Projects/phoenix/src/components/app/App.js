@@ -10,7 +10,7 @@ import {logoutUserAction} from "../../store/slices/LoginSlice";
 
 const App = () => {
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.loginUser.currentUser);
+  const user = useSelector((state) => state.auth?.user);
 
   const logUserOut = () => {
     dispatch(logoutUserAction());
@@ -19,7 +19,7 @@ const App = () => {
   return (
     <>
       <TopBar user={user} logout={logUserOut} />
-      {user.name ? (
+      {user && user.name ? (
         <Home />
       ) : (
         <BrowserRouter>

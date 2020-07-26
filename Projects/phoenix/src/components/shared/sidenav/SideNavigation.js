@@ -16,13 +16,7 @@ export const SideNavigation = () => {
       <Divider />
       <List>
         <ListItem>
-          <ListItemText>Hi</ListItemText>
-        </ListItem>
-        <ListItem>
-          <ListItemText>Hello</ListItemText>
-        </ListItem>
-        <ListItem>
-          <ListItemText>Welcome</ListItemText>
+          <ListItemText>Employees</ListItemText>
         </ListItem>
       </List>
     </Drawer>
