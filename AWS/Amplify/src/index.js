@@ -1,10 +1,10 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from "./node_modules/react";
+import ReactDOM from "./node_modules/react-dom";
 import "./index.css";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-import "@aws-amplify/ui/dist/style.css";
+import "./node_modules/@aws-amplify/ui/dist/style.css";
 
 ReactDOM.render(
   <React.StrictMode>
